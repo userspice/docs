@@ -288,7 +288,7 @@
     </script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;php&quot;,&quot;sql&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -296,12 +296,10 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-1e815a84.png" class="logo" alt="" />
+      <img src="images/logo.png" class="logo" alt="" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="php">php</a>
+              <a href="#" data-language-name="sql">sql</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -312,279 +310,1548 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            <a href="#classes" class="toc-h1 toc-link" data-title="Classes">Classes</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#functions" class="toc-h1 toc-link" data-title="Functions">Functions</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#getip" class="toc-h2 toc-link" data-title="getIP">getIP</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#fetchuserjsonpie" class="toc-h2 toc-link" data-title="fetchUserjsonPIE">fetchUserjsonPIE</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#fetchuserjsonlg2" class="toc-h2 toc-link" data-title="fetchUserjsonLG2">fetchUserjsonLG2</a>
+                  </li>
+                  <li>
+                    <a href="#fetchuserjsonlg" class="toc-h2 toc-link" data-title="fetchUserjsonLG">fetchUserjsonLG</a>
+                  </li>
+                  <li>
+                    <a href="#fetchalllatest" class="toc-h2 toc-link" data-title="fetchAllLatest">fetchAllLatest</a>
+                  </li>
+                  <li>
+                    <a href="#countstuff" class="toc-h2 toc-link" data-title="countStuff">countStuff</a>
+                  </li>
+                  <li>
+                    <a href="#countloginssince" class="toc-h2 toc-link" data-title="countLoginsSince">countLoginsSince</a>
+                  </li>
+                  <li>
+                    <a href="#ago" class="toc-h2 toc-link" data-title="ago">ago</a>
+                  </li>
+                  <li>
+                    <a href="#fetchallaudit" class="toc-h2 toc-link" data-title="fetchAllAudit">fetchAllAudit</a>
+                  </li>
+                  <li>
+                    <a href="#fetchuseraudit" class="toc-h2 toc-link" data-title="fetchUserAudit">fetchUserAudit</a>
+                  </li>
+                  <li>
+                    <a href="#writeaudit" class="toc-h2 toc-link" data-title="writeAudit">writeAudit</a>
+                  </li>
+                  <li>
+                    <a href="#csv_to_array" class="toc-h2 toc-link" data-title="csv_to_array">csv_to_array</a>
+                  </li>
+                  <li>
+                    <a href="#recurse_copy" class="toc-h2 toc-link" data-title="recurse_copy">recurse_copy</a>
+                  </li>
+                  <li>
+                    <a href="#zipdata" class="toc-h2 toc-link" data-title="zipData">zipData</a>
+                  </li>
+                  <li>
+                    <a href="#rrmdir" class="toc-h2 toc-link" data-title="rrmdir">rrmdir</a>
+                  </li>
+                  <li>
+                    <a href="#delete_dir" class="toc-h2 toc-link" data-title="delete_dir">delete_dir</a>
+                  </li>
+                  <li>
+                    <a href="#backupobjects" class="toc-h2 toc-link" data-title="backupObjects">backupObjects</a>
+                  </li>
+                  <li>
+                    <a href="#backupzip" class="toc-h2 toc-link" data-title="backupZip">backupZip</a>
+                  </li>
+                  <li>
+                    <a href="#backupustables" class="toc-h2 toc-link" data-title="backupUsTables">backupUsTables</a>
+                  </li>
+                  <li>
+                    <a href="#backupustable" class="toc-h2 toc-link" data-title="backupUsTable">backupUsTable</a>
+                  </li>
+                  <li>
+                    <a href="#extractzip" class="toc-h2 toc-link" data-title="extractZip">extractZip</a>
+                  </li>
+                  <li>
+                    <a href="#importsqlfile" class="toc-h2 toc-link" data-title="importSqlFile">importSqlFile</a>
+                  </li>
+                  <li>
+                    <a href="#fetchgroupsbymenu" class="toc-h2 toc-link" data-title="fetchGroupsByMenu">fetchGroupsByMenu</a>
+                  </li>
+                  <li>
+                    <a href="#updategroupsmenus" class="toc-h2 toc-link" data-title="updateGroupsMenus">updateGroupsMenus</a>
+                  </li>
+                  <li>
+                    <a href="#addgroupsmenus" class="toc-h2 toc-link" data-title="addGroupsMenus">addGroupsMenus</a>
+                  </li>
+                  <li>
+                    <a href="#output_message" class="toc-h2 toc-link" data-title="output_message">output_message</a>
+                  </li>
+                  <li>
+                    <a href="#inputblock" class="toc-h2 toc-link" data-title="inputBlock">inputBlock</a>
+                  </li>
+                  <li>
+                    <a href="#currentpageid" class="toc-h2 toc-link" data-title="currentPageId">currentPageId</a>
+                  </li>
+                  <li>
+                    <a href="#getuspagefiles" class="toc-h2 toc-link" data-title="getUSPageFiles">getUSPageFiles</a>
+                  </li>
+                  <li>
+                    <a href="#getpagefiles" class="toc-h2 toc-link" data-title="getPageFiles">getPageFiles</a>
+                  </li>
+                  <li>
+                    <a href="#permissionnameexists" class="toc-h2 toc-link" data-title="permissionNameExists">permissionNameExists</a>
+                  </li>
+                  <li>
+                    <a href="#strippagepermissions" class="toc-h2 toc-link" data-title="stripPagePermissions">stripPagePermissions</a>
+                  </li>
+                  <li>
+                    <a href="#userhaspermission" class="toc-h2 toc-link" data-title="userHasPermission">userHasPermission</a>
+                  </li>
+                  <li>
+                    <a href="#usernameexists" class="toc-h2 toc-link" data-title="usernameExists">usernameExists</a>
+                  </li>
+                  <li>
+                    <a href="#emailexists" class="toc-h2 toc-link" data-title="emailExists">emailExists</a>
+                  </li>
+                  <li>
+                    <a href="#updateemail" class="toc-h2 toc-link" data-title="updateEmail">updateEmail</a>
+                  </li>
+                  <li>
+                    <a href="#echoid" class="toc-h2 toc-link" data-title="echoId">echoId</a>
+                  </li>
+                  <li>
+                    <a href="#size" class="toc-h2 toc-link" data-title="size">size</a>
+                  </li>
+                  <li>
+                    <a href="#sanitize" class="toc-h2 toc-link" data-title="sanitize">sanitize</a>
+                  </li>
+                  <li>
+                    <a href="#currentpage" class="toc-h2 toc-link" data-title="currentPage">currentPage</a>
+                  </li>
+                  <li>
+                    <a href="#currentfolder" class="toc-h2 toc-link" data-title="currentFolder">currentFolder</a>
+                  </li>
+                  <li>
+                    <a href="#format_date" class="toc-h2 toc-link" data-title="format_date">format_date</a>
+                  </li>
+                  <li>
+                    <a href="#abrev_date" class="toc-h2 toc-link" data-title="abrev_date">abrev_date</a>
+                  </li>
+                  <li>
+                    <a href="#money" class="toc-h2 toc-link" data-title="money">money</a>
+                  </li>
+                  <li>
+                    <a href="#name_from_id" class="toc-h2 toc-link" data-title="name_from_id">name_from_id</a>
+                  </li>
+                  <li>
+                    <a href="#display_errors" class="toc-h2 toc-link" data-title="display_errors">display_errors</a>
+                  </li>
+                  <li>
+                    <a href="#display_successes" class="toc-h2 toc-link" data-title="display_successes">display_successes</a>
+                  </li>
+                  <li>
+                    <a href="#email" class="toc-h2 toc-link" data-title="email">email</a>
+                  </li>
+                  <li>
+                    <a href="#email_body" class="toc-h2 toc-link" data-title="email_body">email_body</a>
+                  </li>
+                  <li>
+                    <a href="#dump" class="toc-h2 toc-link" data-title="dump">dump</a>
+                  </li>
+                  <li>
+                    <a href="#dnd" class="toc-h2 toc-link" data-title="dnd">dnd</a>
+                  </li>
+                  <li>
+                    <a href="#bold" class="toc-h2 toc-link" data-title="bold">bold</a>
+                  </li>
+                  <li>
+                    <a href="#err" class="toc-h2 toc-link" data-title="err">err</a>
+                  </li>
+                  <li>
+                    <a href="#redirect" class="toc-h2 toc-link" data-title="redirect">redirect</a>
+                  </li>
+                  <li>
+                    <a href="#write_php_ini" class="toc-h2 toc-link" data-title="write_php_ini">write_php_ini</a>
+                  </li>
+                  <li>
+                    <a href="#safefilerewrite" class="toc-h2 toc-link" data-title="safefilerewrite">safefilerewrite</a>
+                  </li>
+                  <li>
+                    <a href="#_assert" class="toc-h2 toc-link" data-title="_assert">_assert</a>
+                  </li>
+                  <li>
+                    <a href="#preparemenutree" class="toc-h2 toc-link" data-title="prepareMenuTree">prepareMenuTree</a>
+                  </li>
+                  <li>
+                    <a href="#prepareindentedmenutree" class="toc-h2 toc-link" data-title="prepareIndentedMenuTree">prepareIndentedMenuTree</a>
+                  </li>
+                  <li>
+                    <a href="#preparedropdownstring" class="toc-h2 toc-link" data-title="prepareDropdownString">prepareDropdownString</a>
+                  </li>
+                  <li>
+                    <a href="#prepareitemstring" class="toc-h2 toc-link" data-title="prepareItemString">prepareItemString</a>
+                  </li>
+                  <li>
+                    <a href="#permissionidexists" class="toc-h2 toc-link" data-title="permissionIdExists">permissionIdExists</a>
+                  </li>
+                  <li>
+                    <a href="#fetchpermissiondetails" class="toc-h2 toc-link" data-title="fetchPermissionDetails">fetchPermissionDetails</a>
+                  </li>
+                  <li>
+                    <a href="#updatepermissionname" class="toc-h2 toc-link" data-title="updatePermissionName">updatePermissionName</a>
+                  </li>
+                  <li>
+                    <a href="#fetchuserpermissions" class="toc-h2 toc-link" data-title="fetchUserPermissions">fetchUserPermissions</a>
+                  </li>
+                  <li>
+                    <a href="#fetchpermissionusers" class="toc-h2 toc-link" data-title="fetchPermissionUsers">fetchPermissionUsers</a>
+                  </li>
+                  <li>
+                    <a href="#removepermission" class="toc-h2 toc-link" data-title="removePermission">removePermission</a>
+                  </li>
+                  <li>
+                    <a href="#getpathphpfiles" class="toc-h2 toc-link" data-title="getPathPhpFiles">getPathPhpFiles</a>
+                  </li>
+                  <li>
+                    <a href="#deletepages" class="toc-h2 toc-link" data-title="deletePages">deletePages</a>
+                  </li>
+                  <li>
+                    <a href="#fetchallpages" class="toc-h2 toc-link" data-title="fetchAllPages">fetchAllPages</a>
+                  </li>
+                  <li>
+                    <a href="#fetchpagedetails" class="toc-h2 toc-link" data-title="fetchPageDetails">fetchPageDetails</a>
+                  </li>
+                  <li>
+                    <a href="#pageidexists" class="toc-h2 toc-link" data-title="pageIdExists">pageIdExists</a>
+                  </li>
+                  <li>
+                    <a href="#updateprivate" class="toc-h2 toc-link" data-title="updatePrivate">updatePrivate</a>
+                  </li>
+                  <li>
+                    <a href="#createpages" class="toc-h2 toc-link" data-title="createPages">createPages</a>
+                  </li>
+                  <li>
+                    <a href="#addpage" class="toc-h2 toc-link" data-title="addPage">addPage</a>
+                  </li>
+                  <li>
+                    <a href="#securepage" class="toc-h2 toc-link" data-title="securePage">securePage</a>
+                  </li>
+                  <li>
+                    <a href="#fetchpagepermissions" class="toc-h2 toc-link" data-title="fetchPagePermissions">fetchPagePermissions</a>
+                  </li>
+                  <li>
+                    <a href="#fetchpermissionpages" class="toc-h2 toc-link" data-title="fetchPermissionPages">fetchPermissionPages</a>
+                  </li>
+                  <li>
+                    <a href="#removepage" class="toc-h2 toc-link" data-title="removePage">removePage</a>
+                  </li>
+                  <li>
+                    <a href="#checkmenu" class="toc-h2 toc-link" data-title="checkMenu">checkMenu</a>
+                  </li>
+                  <li>
+                    <a href="#fetchallpermissions" class="toc-h2 toc-link" data-title="fetchAllPermissions">fetchAllPermissions</a>
+                  </li>
+                  <li>
+                    <a href="#checkpermission" class="toc-h2 toc-link" data-title="checkPermission">checkPermission</a>
+                  </li>
+                  <li>
+                    <a href="#permissionnameexists" class="toc-h2 toc-link" data-title="permissionNameExists">permissionNameExists</a>
+                  </li>
+                  <li>
+                    <a href="#addpermission" class="toc-h2 toc-link" data-title="addPermission">addPermission</a>
+                  </li>
+                  <li>
+                    <a href="#deletepermission" class="toc-h2 toc-link" data-title="deletePermission">deletePermission</a>
+                  </li>
+                  <li>
+                    <a href="#hasperm" class="toc-h2 toc-link" data-title="hasPerm">hasPerm</a>
+                  </li>
+                  <li>
+                    <a href="#echopage" class="toc-h2 toc-link" data-title="echopage">echopage</a>
+                  </li>
+                  <li>
+                    <a href="#useridexists" class="toc-h2 toc-link" data-title="userIdExists">userIdExists</a>
+                  </li>
+                  <li>
+                    <a href="#fetchallusers" class="toc-h2 toc-link" data-title="fetchAllUsers">fetchAllUsers</a>
+                  </li>
+                  <li>
+                    <a href="#fetchuserdetails" class="toc-h2 toc-link" data-title="fetchUserDetails">fetchUserDetails</a>
+                  </li>
+                  <li>
+                    <a href="#deleteusers" class="toc-h2 toc-link" data-title="deleteUsers">deleteUsers</a>
+                  </li>
+                  <li>
+                    <a href="#echouser" class="toc-h2 toc-link" data-title="echouser">echouser</a>
+                  </li>
+                  <li>
+                    <a href="#echousername" class="toc-h2 toc-link" data-title="echousername">echousername</a>
+                  </li>
+                  <li>
+                    <a href="#updateuser" class="toc-h2 toc-link" data-title="updateUser">updateUser</a>
+                  </li>
+                  <li>
+                    <a href="#fetchusername" class="toc-h2 toc-link" data-title="fetchUserName">fetchUserName</a>
+                  </li>
+                  <li>
+                    <a href="#isadmin" class="toc-h2 toc-link" data-title="isAdmin">isAdmin</a>
+                  </li>
+                  <li>
+                    <a href="#ipcheck" class="toc-h2 toc-link" data-title="ipCheck">ipCheck</a>
+                  </li>
+                  <li>
+                    <a href="#ipcheckban" class="toc-h2 toc-link" data-title="ipCheckBan">ipCheckBan</a>
+                  </li>
+                  <li>
+                    <a href="#randomstring" class="toc-h2 toc-link" data-title="randomstring">randomstring</a>
+                  </li>
+                  <li>
+                    <a href="#get_gravatar" class="toc-h2 toc-link" data-title="get_gravatar">get_gravatar</a>
+                  </li>
+                  <li>
+                    <a href="#fetchgroupsbymenu" class="toc-h2 toc-link" data-title="fetchGroupsByMenu">fetchGroupsByMenu</a>
+                  </li>
+                  <li>
+                    <a href="#updategroupsmenus" class="toc-h2 toc-link" data-title="updateGroupsMenus">updateGroupsMenus</a>
+                  </li>
+                  <li>
+                    <a href="#addgroupsmenus" class="toc-h2 toc-link" data-title="addGroupsMenus">addGroupsMenus</a>
+                  </li>
+                  <li>
+                    <a href="#usernameexists" class="toc-h2 toc-link" data-title="usernameExists">usernameExists</a>
+                  </li>
+                  <li>
+                    <a href="#getpagefiles" class="toc-h2 toc-link" data-title="getPageFiles">getPageFiles</a>
+                  </li>
+                  <li>
+                    <a href="#getuspagefiles" class="toc-h2 toc-link" data-title="getUSPageFiles">getUSPageFiles</a>
+                  </li>
+                  <li>
+                    <a href="#sanitizeddest" class="toc-h2 toc-link" data-title="sanitizedDest">sanitizedDest</a>
+                  </li>
+                  <li>
+                    <a href="#resultblock" class="toc-h2 toc-link" data-title="resultBlock">resultBlock</a>
+                  </li>
+                  <li>
+                    <a href="#lang" class="toc-h2 toc-link" data-title="lang">lang</a>
+                  </li>
+                  <li>
+                    <a href="#isvalidemail" class="toc-h2 toc-link" data-title="isValidEmail">isValidEmail</a>
+                  </li>
+                  <li>
+                    <a href="#emailexists" class="toc-h2 toc-link" data-title="emailExists">emailExists</a>
+                  </li>
+                  <li>
+                    <a href="#updateemail" class="toc-h2 toc-link" data-title="updateEmail">updateEmail</a>
+                  </li>
+                  <li>
+                    <a href="#echoid" class="toc-h2 toc-link" data-title="echoId">echoId</a>
+                  </li>
+                  <li>
+                    <a href="#bin" class="toc-h2 toc-link" data-title="bin">bin</a>
+                  </li>
+                  <li>
+                    <a href="#generateform" class="toc-h2 toc-link" data-title="generateForm">generateForm</a>
+                  </li>
+                  <li>
+                    <a href="#generateaddform" class="toc-h2 toc-link" data-title="generateAddForm">generateAddForm</a>
+                  </li>
+                  <li>
+                    <a href="#updatefields2" class="toc-h2 toc-link" data-title="updateFields2">updateFields2</a>
+                  </li>
+                  <li>
+                    <a href="#mqtt" class="toc-h2 toc-link" data-title="mqtt">mqtt</a>
+                  </li>
+                  <li>
+                    <a href="#clean" class="toc-h2 toc-link" data-title="clean">clean</a>
+                  </li>
+                  <li>
+                    <a href="#strippagepermissions" class="toc-h2 toc-link" data-title="stripPagePermissions">stripPagePermissions</a>
+                  </li>
+                  <li>
+                    <a href="#encodeuricomponent" class="toc-h2 toc-link" data-title="encodeURIComponent">encodeURIComponent</a>
+                  </li>
+                  <li>
+                    <a href="#logger" class="toc-h2 toc-link" data-title="logger">logger</a>
+                  </li>
+                  <li>
+                    <a href="#echodatetime" class="toc-h2 toc-link" data-title="echodatetime">echodatetime</a>
+                  </li>
+                  <li>
+                    <a href="#time2str" class="toc-h2 toc-link" data-title="time2str">time2str</a>
+                  </li>
+                  <li>
+                    <a href="#ipreason" class="toc-h2 toc-link" data-title="ipReason">ipReason</a>
+                  </li>
+                  <li>
+                    <a href="#checkban" class="toc-h2 toc-link" data-title="checkBan">checkBan</a>
+                  </li>
+                  <li>
+                    <a href="#random_password" class="toc-h2 toc-link" data-title="random_password">random_password</a>
+                  </li>
+                  <li>
+                    <a href="#returnerror" class="toc-h2 toc-link" data-title="returnError">returnError</a>
+                  </li>
+                  <li>
+                    <a href="#userhaspermission" class="toc-h2 toc-link" data-title="userHasPermission">userHasPermission</a>
+                  </li>
+                  <li>
+                    <a href="#requestcheck" class="toc-h2 toc-link" data-title="requestCheck">requestCheck</a>
+                  </li>
+                  <li>
+                    <a href="#adminnotifications" class="toc-h2 toc-link" data-title="adminNotifications">adminNotifications</a>
+                  </li>
+                  <li>
+                    <a href="#lognote" class="toc-h2 toc-link" data-title="lognote">lognote</a>
+                  </li>
+                  <li>
+                    <a href="#islocalhost" class="toc-h2 toc-link" data-title="isLocalhost">isLocalhost</a>
+                  </li>
+                  <li>
+                    <a href="#currentpagestrict" class="toc-h2 toc-link" data-title="currentPageStrict">currentPageStrict</a>
+                  </li>
+                  <li>
+                    <a href="#usersessioncount" class="toc-h2 toc-link" data-title="UserSessionCount">UserSessionCount</a>
+                  </li>
+                  <li>
+                    <a href="#fetchusersessions" class="toc-h2 toc-link" data-title="fetchUserSessions">fetchUserSessions</a>
+                  </li>
+                  <li>
+                    <a href="#fetchadminsessions" class="toc-h2 toc-link" data-title="fetchAdminSessions">fetchAdminSessions</a>
+                  </li>
+                  <li>
+                    <a href="#killsessions" class="toc-h2 toc-link" data-title="killSessions">killSessions</a>
+                  </li>
+                  <li>
+                    <a href="#passwordresetkillsessions" class="toc-h2 toc-link" data-title="passwordResetKillSessions">passwordResetKillSessions</a>
+                  </li>
+                  <li>
+                    <a href="#username_helper" class="toc-h2 toc-link" data-title="username_helper">username_helper</a>
+                  </li>
+                  <li>
+                    <a href="#oxfordlist" class="toc-h2 toc-link" data-title="oxfordList">oxfordList</a>
+                  </li>
+                  <li>
+                    <a href="#currentfile" class="toc-h2 toc-link" data-title="currentFile">currentFile</a>
+                  </li>
+                  <li>
+                    <a href="#importsql" class="toc-h2 toc-link" data-title="importSQL">importSQL</a>
+                  </li>
+                  <li>
+                    <a href="#pluginactive" class="toc-h2 toc-link" data-title="pluginActive">pluginActive</a>
+                  </li>
+                  <li>
+                    <a href="#languageswitcher" class="toc-h2 toc-link" data-title="languageSwitcher">languageSwitcher</a>
+                  </li>
+                  <li>
+                    <a href="#getmyhooks" class="toc-h2 toc-link" data-title="getMyHooks">getMyHooks</a>
+                  </li>
+                  <li>
+                    <a href="#includehook" class="toc-h2 toc-link" data-title="includeHook">includeHook</a>
+                  </li>
+                  <li>
+                    <a href="#registerhooks" class="toc-h2 toc-link" data-title="registerHooks">registerHooks</a>
+                  </li>
+                  <li>
+                    <a href="#deregisterhooks" class="toc-h2 toc-link" data-title="deRegisterHooks">deRegisterHooks</a>
+                  </li>
+                  <li>
+                    <a href="#shakerisinstalled" class="toc-h2 toc-link" data-title="shakerIsInstalled">shakerIsInstalled</a>
+                  </li>
+                  <li>
+                    <a href="#updatereauth" class="toc-h2 toc-link" data-title="updateReAuth">updateReAuth</a>
+                  </li>
+                  <li>
+                    <a href="#reauth" class="toc-h2 toc-link" data-title="reAuth">reAuth</a>
+                  </li>
+                  <li>
+                    <a href="#verifyadmin" class="toc-h2 toc-link" data-title="verifyadmin">verifyadmin</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#features" class="toc-h1 toc-link" data-title="Features">Features</a>
           </li>
       </ul>
-        <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
-        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+        <!-- We can add a logo by adding a logo.png in source/images  -->
+<h1 id='introduction'>Introduction</h1>
+<p>Welcome the UserSpice Documentation! Below, you will see information broken down into several categories, including classes, functions, and features.</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>On the left, you will be able to navigation specific categories and their topics, including search, and on the right you will see both PHP and SQL code snippets.</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>If you have any recommendations or requests for the documents, we encourage you to make a pull request on GitHub.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>Thank you.</p>
+<h1 id='classes'>Classes</h1><h1 id='functions'>Functions</h1>
+<p>All functions included below can be overwritten in any of your custom files that are loaded before the helpers by using the function name. Although discouraged, if you require to overwrite our default behavior, you are permitted to do so.</p>
+<h2 id='getip'>getIP</h2>
+<p><code>Helper: audit</code></p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+<p><code>Parameters: None</code></p>
+<h2 id='fetchuserjsonpie'>fetchUserjsonPIE</h2>
+<p><code>Helper: audit</code></p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
+<p><code>Parameters: None</code></p>
+<h2 id='fetchuserjsonlg2'>fetchUserjsonLG2</h2>
+<p><code>Helper: audit</code></p>
+
+<p><code>Parameters: None</code></p>
+<h2 id='fetchuserjsonlg'>fetchUserjsonLG</h2>
+<p><code>Helper: audit</code></p>
+
+<p><code>Parameters: None</code></p>
+<h2 id='fetchalllatest'>fetchAllLatest</h2>
+<p><code>Helper: audit</code></p>
+
+<p><code>Parameters: $userid,$start,$end,$eventcode</code></p>
+<h2 id='countstuff'>countStuff</h2>
+<p><code>Helper: audit</code></p>
+
+<p><code>Parameters: $what</code></p>
+<h2 id='countloginssince'>countLoginsSince</h2>
+<p><code>Helper: audit</code></p>
+
+<p><code>Parameters: $eventcode,$since</code></p>
+<h2 id='ago'>ago</h2>
+<p><code>Helper: audit</code></p>
+
+<p><code>Parameters: $time</code></p>
+<h2 id='fetchallaudit'>fetchAllAudit</h2>
+<p><code>Helper: audit</code></p>
+
+<p><code>Parameters: None</code></p>
+<h2 id='fetchuseraudit'>fetchUserAudit</h2>
+<p><code>Helper: audit</code></p>
+
+<p><code>Parameters: $userid</code></p>
+<h2 id='writeaudit'>writeAudit</h2>
+<p><code>Helper: audit</code></p>
+
+<p><code>Parameters: $userid,$userip,$othus,$event,$action,$itemid=0</code></p>
+<h2 id='csv_to_array'>csv_to_array</h2>
+<p><code>Helper: backup_util</code></p>
+
+<p><code>Parameters: $filename=&#39;&#39;, $delimiter=&#39;,&#39;</code></p>
+<h2 id='recurse_copy'>recurse_copy</h2>
+<p><code>Helper: backup_util</code></p>
+
+<p><code>Parameters: $src,$dst</code></p>
+<h2 id='zipdata'>zipData</h2>
+<p><code>Helper: backup_util</code></p>
+
+<p><code>Parameters: $source, $destination</code></p>
+<h2 id='rrmdir'>rrmdir</h2>
+<p><code>Helper: backup_util</code></p>
+
+<p><code>Parameters: $src</code></p>
+<h2 id='delete_dir'>delete_dir</h2>
+<p><code>Helper: backup_util</code></p>
+
+<p><code>Parameters: $dir</code></p>
+<h2 id='backupobjects'>backupObjects</h2>
+<p><code>Helper: backup_util</code></p>
+
+<p><code>Parameters: $backupItems,$backupPath</code></p>
+<h2 id='backupzip'>backupZip</h2>
+<p><code>Helper: backup_util</code></p>
+
+<p><code>Parameters: $backupPath,$delBackupPath=false</code></p>
+<h2 id='backupustables'>backupUsTables</h2>
+<p><code>Helper: backup_util</code></p>
+
+<p><code>Parameters: $backupPath</code></p>
+<h2 id='backupustable'>backupUsTable</h2>
+<p><code>Helper: backup_util</code></p>
+
+<p><code>Parameters: $backupPath</code></p>
+<h2 id='extractzip'>extractZip</h2>
+<p><code>Helper: backup_util</code></p>
+
+<p><code>Parameters: $restoreFile,$restoreDest</code></p>
+<h2 id='importsqlfile'>importSqlFile</h2>
+<p><code>Helper: backup_util</code></p>
+
+<p><code>Parameters: $sqlFile</code></p>
+<h2 id='fetchgroupsbymenu'>fetchGroupsByMenu</h2>
+<p><code>Helper: dbmenu</code></p>
+
+<p><code>Parameters: $menu_id</code></p>
+<h2 id='updategroupsmenus'>updateGroupsMenus</h2>
+<p><code>Helper: dbmenu</code></p>
+
+<p><code>Parameters: $group_ids, $menu_ids</code></p>
+<h2 id='addgroupsmenus'>addGroupsMenus</h2>
+<p><code>Helper: dbmenu</code></p>
+
+<p><code>Parameters: $group_ids, $menu_ids</code></p>
+<h2 id='output_message'>output_message</h2>
+<p><code>Helper: deprecated</code></p>
+
+<p><code>Parameters: $message</code></p>
+<h2 id='inputblock'>inputBlock</h2>
+<p><code>Helper: deprecated</code></p>
+
+<p><code>Parameters: $type,$label,$id,$divAttr=array(</code></p>
+<h2 id='currentpageid'>currentPageId</h2>
+<p><code>Helper: deprecated</code></p>
+
+<p><code>Parameters: $uri</code></p>
+<h2 id='getuspagefiles'>getUSPageFiles</h2>
+<p><code>Helper: deprecated</code></p>
+
+<p><code>Parameters: None</code></p>
+<h2 id='getpagefiles'>getPageFiles</h2>
+<p><code>Helper: deprecated</code></p>
+
+<p><code>Parameters: None</code></p>
+<h2 id='permissionnameexists'>permissionNameExists</h2>
+<p><code>Helper: deprecated</code></p>
+
+<p><code>Parameters: $permission</code></p>
+<h2 id='strippagepermissions'>stripPagePermissions</h2>
+<p><code>Helper: deprecated</code></p>
+
+<p><code>Parameters: $id</code></p>
+<h2 id='userhaspermission'>userHasPermission</h2>
+<p><code>Helper: deprecated</code></p>
+
+<p><code>Parameters: $userID,$permissionID</code></p>
+<h2 id='usernameexists'>usernameExists</h2>
+<p><code>Helper: deprecated</code></p>
+
+<p><code>Parameters: $username</code></p>
+<h2 id='emailexists'>emailExists</h2>
+<p><code>Helper: deprecated</code></p>
+
+<p><code>Parameters: $email</code></p>
+<h2 id='updateemail'>updateEmail</h2>
+<p><code>Helper: deprecated</code></p>
+
+<p><code>Parameters: $id, $email</code></p>
+<h2 id='echoid'>echoId</h2>
+<p><code>Helper: deprecated</code></p>
+
+<p><code>Parameters: $id,$table,$column</code></p>
+<h2 id='size'>size</h2>
+<p><code>Helper: helpers</code></p>
+
+<p><code>Parameters: $path</code></p>
+<h2 id='sanitize'>sanitize</h2>
+<p><code>Helper: helpers</code></p>
+
+<p><code>Parameters: $string</code></p>
+<h2 id='currentpage'>currentPage</h2>
+<p><code>Helper: helpers</code></p>
+
+<p><code>Parameters: None</code></p>
+<h2 id='currentfolder'>currentFolder</h2>
+<p><code>Helper: helpers</code></p>
+
+<p><code>Parameters: None</code></p>
+<h2 id='format_date'>format_date</h2>
+<p><code>Helper: helpers</code></p>
+
+<p><code>Parameters: $date,$tz</code></p>
+<h2 id='abrev_date'>abrev_date</h2>
+<p><code>Helper: helpers</code></p>
+
+<p><code>Parameters: $date,$tz</code></p>
+<h2 id='money'>money</h2>
+<p><code>Helper: helpers</code></p>
+
+<p><code>Parameters: $ugly</code></p>
+<h2 id='name_from_id'>name_from_id</h2>
+<p><code>Helper: helpers</code></p>
+
+<p><code>Parameters: $id</code></p>
+<h2 id='display_errors'>display_errors</h2>
+<p><code>Helper: helpers</code></p>
+
+<p><code>Parameters: $errors = array(</code></p>
+<h2 id='display_successes'>display_successes</h2>
+<p><code>Helper: helpers</code></p>
+
+<p><code>Parameters: $successes = array(</code></p>
+<h2 id='email'>email</h2>
+<p><code>Helper: helpers</code></p>
+
+<p><code>Parameters: $to,$subject,$body,$opts=[],$attachment=false</code></p>
+<h2 id='email_body'>email_body</h2>
+<p><code>Helper: helpers</code></p>
+
+<p><code>Parameters: $template,$options = array(</code></p>
+<h2 id='dump'>dump</h2>
+<p><code>Helper: helpers</code></p>
+
+<p><code>Parameters: $var,$adminOnly=false,$localhostOnly=false</code></p>
+<h2 id='dnd'>dnd</h2>
+<p><code>Helper: helpers</code></p>
+
+<p><code>Parameters: $var, $adminOnly = false, $localhostOnly = false</code></p>
+<h2 id='bold'>bold</h2>
+<p><code>Helper: helpers</code></p>
+
+<p><code>Parameters: $text</code></p>
+<h2 id='err'>err</h2>
+<p><code>Helper: helpers</code></p>
+
+<p><code>Parameters: $text</code></p>
+<h2 id='redirect'>redirect</h2>
+<p><code>Helper: helpers</code></p>
+
+<p><code>Parameters: $location</code></p>
+<h2 id='write_php_ini'>write_php_ini</h2>
+<p><code>Helper: helpers</code></p>
+
+<p><code>Parameters: $array, $file</code></p>
+<h2 id='safefilerewrite'>safefilerewrite</h2>
+<p><code>Helper: helpers</code></p>
+
+<p><code>Parameters: $fileName, $dataToSave</code></p>
+<h2 id='_assert'>_assert</h2>
+<p><code>Helper: menus</code></p>
+
+<p><code>Parameters:  $expr, $msg</code></p>
+<h2 id='preparemenutree'>prepareMenuTree</h2>
+<p><code>Helper: menus</code></p>
+
+<p><code>Parameters: $menuResults</code></p>
+<h2 id='prepareindentedmenutree'>prepareIndentedMenuTree</h2>
+<p><code>Helper: menus</code></p>
+
+<p><code>Parameters: $menuResults</code></p>
+<h2 id='preparedropdownstring'>prepareDropdownString</h2>
+<p><code>Helper: menus</code></p>
+
+<p><code>Parameters: $menuItem,$user_id</code></p>
+<h2 id='prepareitemstring'>prepareItemString</h2>
+<p><code>Helper: menus</code></p>
+
+<p><code>Parameters: $menuItem,$user_id</code></p>
+<h2 id='permissionidexists'>permissionIdExists</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $id</code></p>
+<h2 id='fetchpermissiondetails'>fetchPermissionDetails</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $id</code></p>
+<h2 id='updatepermissionname'>updatePermissionName</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $id, $name</code></p>
+<h2 id='fetchuserpermissions'>fetchUserPermissions</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $user_id</code></p>
+<h2 id='fetchpermissionusers'>fetchPermissionUsers</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $permission_id</code></p>
+<h2 id='removepermission'>removePermission</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $permissions, $members</code></p>
+<h2 id='getpathphpfiles'>getPathPhpFiles</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $absRoot,$urlRoot,$fullPath</code></p>
+<h2 id='deletepages'>deletePages</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $pages</code></p>
+<h2 id='fetchallpages'>fetchAllPages</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: None</code></p>
+<h2 id='fetchpagedetails'>fetchPageDetails</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $id</code></p>
+<h2 id='pageidexists'>pageIdExists</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $id</code></p>
+<h2 id='updateprivate'>updatePrivate</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $id, $private</code></p>
+<h2 id='createpages'>createPages</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $pages</code></p>
+<h2 id='addpage'>addPage</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $page, $permission</code></p>
+<h2 id='securepage'>securePage</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $uri</code></p>
+<h2 id='fetchpagepermissions'>fetchPagePermissions</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $page_id</code></p>
+<h2 id='fetchpermissionpages'>fetchPermissionPages</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $permission_id</code></p>
+<h2 id='removepage'>removePage</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $pages, $permissions</code></p>
+<h2 id='checkmenu'>checkMenu</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $permission, $id = 0</code></p>
+<h2 id='fetchallpermissions'>fetchAllPermissions</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: None</code></p>
+<h2 id='checkpermission'>checkPermission</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $permission</code></p>
+<h2 id='permissionnameexists'>permissionNameExists</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $permission</code></p>
+<h2 id='addpermission'>addPermission</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $permission_ids, $members</code></p>
+<h2 id='deletepermission'>deletePermission</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $permission</code></p>
+<h2 id='hasperm'>hasPerm</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $permissions, $id=null</code></p>
+<h2 id='echopage'>echopage</h2>
+<p><code>Helper: permissions</code></p>
+
+<p><code>Parameters: $id</code></p>
+<h2 id='useridexists'>userIdExists</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$userCheck</span> <span class="o">=</span> <span class="nx">userIdExists</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nv">$userCheck</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"ID 1 exists"</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"ID 1 does NOT exists"</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<p>Check if the provided User ID exists in the users table</p>
+<h3 id='required-parameters'>Required Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Accepted Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td><code>int</code></td>
+<td>The ID of the user to verify</td>
+</tr>
+</tbody></table>
+<h3 id='expected-returned'>Expected Returned</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Success</td>
+<td><code>boolean</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Error</td>
+<td><code>boolean</code></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: users</code></p>
+<h2 id='fetchallusers'>fetchAllUsers</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$orderBy</span> <span class="o">=</span> <span class="s1">'lname DESC, fname'</span><span class="p">;</span> <span class="c1">//orders by lname desc, fname</span>
+<span class="nv">$desc</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">//forces last orderBy param to be desc as well, if no order by is passed, this doesnt do anything</span>
+<span class="nv">$disabled</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">//removes users who are disabled, DB column permissions</span>
+<span class="nv">$users</span> <span class="o">=</span> <span class="nx">fetchAllUsers</span><span class="p">(</span><span class="nv">$orderBy</span><span class="p">,</span> <span class="nv">$desc</span><span class="p">,</span> <span class="nv">$disabled</span><span class="p">);</span>
+
+<span class="k">foreach</span><span class="p">(</span><span class="nv">$users</span> <span class="k">as</span> <span class="nv">$u</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">dump</span><span class="p">(</span><span class="nv">$u</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Fetches an object of users based on the parameters included</p>
+<h3 id='optional-parameters'>Optional Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Accepted Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>orderBy</td>
+<td><code>string</code></td>
+<td><code>null</code></td>
+<td>Comma seperated params of order by clause to send to the database</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>desc</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>An optional value to order the orderBy in a descending fashion</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>Pass false to remove disabled users from the return</td>
 </tr>
 </tbody></table>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p><code>Successful Return: Object</code>
+<code>Failed Return: null</code></p>
+<h3 id='expected-returned-2'>Expected Returned</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Success</td>
+<td><code>Object</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Error</td>
+<td><code>Object</code></td>
+<td></td>
+</tr>
+</tbody></table>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p><code>Helper: users</code></p>
+<h2 id='fetchuserdetails'>fetchUserDetails</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="c1">//Good Result:</span>
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nx">fetchUserDetails</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="kc">NULL</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span> <span class="c1">//Returns object</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+<span class="nv">$username</span> <span class="o">=</span> <span class="s1">'admin'</span><span class="p">;</span>
+<span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nx">fetchUserDetails</span><span class="p">(</span><span class="nv">$username</span><span class="p">);</span> <span class="c1">//Returns object</span>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="c1">//Bad Result:</span>
+<span class="nv">$id</span> <span class="o">=</span> <span class="s1">'admin'</span><span class="p">;</span>
+<span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nx">fetchUserDetails</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="kc">NULL</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span> <span class="c1">//Returns null</span>
 </code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+<p>Fetches an object of a user based on the parameters included</p>
+<h3 id='optional-parameters-2'>Optional Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Accepted Type</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>username</td>
+<td><code>string</code></td>
+<td><code>null</code></td>
+<td>Username for lookup</td>
+</tr>
+<tr>
+<td>token</td>
+<td><code>string</code></td>
+<td><code>null</code></td>
+<td>Deprecated feature</td>
+</tr>
+<tr>
+<td>id</td>
+<td><code>int</code></td>
+<td><code>null</code></td>
+<td>User ID for lookup</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h3 id='expected-returned-3'>Expected Returned</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Success</td>
+<td><code>Object</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Error</td>
+<td><code>null</code></td>
+<td></td>
+</tr>
+</tbody></table>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p><code>Helper: users</code></p>
+<h2 id='deleteusers'>deleteUsers</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="c1">//Good Result:</span>
+<span class="nv">$users</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
+<span class="nv">$deleteUsers</span> <span class="o">=</span> <span class="nx">deleteUsers</span><span class="p">(</span><span class="nv">$users</span><span class="p">);</span> <span class="c1">// returns 3 - number of looped users - may not be the actual number deleted</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  <span class="nt">-X</span> DELETE
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="c1">//Bad Result:</span>
+<span class="nv">$users</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'username'</span><span class="p">];</span>
+<span class="nv">$deleteUsers</span> <span class="o">=</span> <span class="nx">deleteUsers</span><span class="p">(</span><span class="nv">$users</span><span class="p">);</span> <span class="c1">// returns 0 as "username" cannot be converted to an int</span>
 </code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<p>Delete user(s) by ID</p>
+<h3 id='required-parameters-2'>Required Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Accepted Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>users</td>
+<td><code>array</code></td>
+<td>IDs of users in an array</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
+<h3 id='expected-returned-4'>Expected Returned</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Success</td>
+<td><code>int</code></td>
+<td>Number of users deleted</td>
+</tr>
+<tr>
+<td>Error</td>
+<td><code>int</code></td>
+<td>Number of users deleted</td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: users</code></p>
+<h2 id='echouser'>echouser</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="c1">//Good Result:</span>
+<span class="nx">echouser</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">//echos info from User ID 1 based on Setting in ACP</span>
+<span class="nx">echouser</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">//echos Username (FName) from User ID 1</span>
+
+<span class="c1">//Bad Result:</span>
+<span class="nx">echouser</span><span class="p">(</span><span class="s1">'admin'</span><span class="p">);</span> <span class="c1">//echos "Unknown" as not a valid User ID</span>
+</code></pre></div>
+<p>Echo a user directly in your code as defined in the Setting in your Admin Panel. An optional parameter can be passed to override the type.</p>
+<h3 id='required-parameters-3'>Required Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Accepted Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td><code>int</code></td>
+<td>The ID of the user to return</td>
+</tr>
+</tbody></table>
+<h3 id='optional-parameters-3'>Optional Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Accepted Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>echoType</td>
+<td><code>int</code></td>
+<td><code>null</code></td>
+<td>An in-line setting override as described below</td>
+</tr>
+</tbody></table>
+<h3 id='types'>Types</h3>
+<table><thead>
+<tr>
+<th>ID</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
+<td>FName Lname</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Username</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Username (FName LName)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Username (FName)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>FName First Inital of LName</td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: users</code></p>
+<h2 id='echousername'>echousername</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="c1">//Good Result:</span>
+<span class="nv">$username</span> <span class="o">=</span> <span class="nx">echousername</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">//returns username from User ID 1</span>
+
+<span class="c1">//Bad Result:</span>
+<span class="nv">$username</span> <span class="o">=</span> <span class="nx">echousername</span><span class="p">(</span><span class="s1">'admin'</span><span class="p">);</span> <span class="c1">//returns "Unknown" as not a valid User ID</span>
+</code></pre></div>
+<p>Returns the username of a user by ID</p>
+
 <aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+    This does not echo as the function name would imply, it only returns the data.
 </aside>
-
-<p>The Kittn API uses the following error codes:</p>
-
+<h3 id='required-parameters-4'>Required Parameters</h3>
 <table><thead>
 <tr>
-<th>Error Code</th>
-<th>Meaning</th>
+<th>Parameter</th>
+<th>Accepted Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td>id</td>
+<td><code>int</code></td>
+<td>The ID of the user to return</td>
 </tr>
 </tbody></table>
 
+<p><code>Helper: users</code></p>
+<h2 id='updateuser'>updateUser</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="c1">//Good Result:</span>
+<span class="nv">$column</span> <span class="o">=</span> <span class="s1">'fname'</span><span class="p">;</span>
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nv">$value</span> <span class="o">=</span> <span class="s1">'Doe'</span><span class="p">;</span>
+<span class="nv">$updateUser</span> <span class="o">=</span> <span class="nx">updateUser</span><span class="p">(</span><span class="nv">$column</span><span class="p">,</span> <span class="nv">$id</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span> <span class="c1">//returns DB result object</span>
+
+<span class="nv">$column</span> <span class="o">=</span> <span class="s1">'fname'</span><span class="p">;</span>
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nv">$value</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nv">$updateUser</span> <span class="o">=</span> <span class="nx">updateUser</span><span class="p">(</span><span class="nv">$column</span><span class="p">,</span> <span class="nv">$id</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span> <span class="c1">//returns DB result object</span>
+
+<span class="c1">//Bad Result:</span>
+<span class="nv">$column</span> <span class="o">=</span> <span class="s1">'fname'</span><span class="p">;</span>
+<span class="nv">$id</span> <span class="o">=</span> <span class="s1">'jdoe'</span><span class="p">;</span>
+<span class="nv">$value</span> <span class="o">=</span> <span class="s1">'Doe'</span><span class="p">;</span>
+<span class="nv">$updateUser</span> <span class="o">=</span> <span class="nx">updateUser</span><span class="p">(</span><span class="nv">$column</span><span class="p">,</span> <span class="nv">$id</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span> <span class="c1">//returns null, failed as id is not int</span>
+</code></pre></div>
+<p>Update an attribute of a specific user by ID</p>
+<h3 id='required-parameters-5'>Required Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Accepted Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>column</td>
+<td><code>string</code></td>
+<td>The name of the column to update</td>
+</tr>
+<tr>
+<td>id</td>
+<td><code>int</code></td>
+<td>The ID of the user to update</td>
+</tr>
+<tr>
+<td>value</td>
+<td><code>string</code></td>
+<td>The value to set the column to for the user ID</td>
+</tr>
+</tbody></table>
+<h3 id='expected-returned-5'>Expected Returned</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Success</td>
+<td><code>Object</code></td>
+<td><a href="#database-result-object">Database result object</a></td>
+</tr>
+<tr>
+<td>Error</td>
+<td><code>null</code></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: users</code></p>
+<h2 id='fetchusername'>fetchUserName</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="c1">//Good Result:</span>
+<span class="nv">$id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nx">fetchUserName</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="kc">NULL</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span> <span class="c1">//Returns string of fname and lname</span>
+
+<span class="nv">$username</span> <span class="o">=</span> <span class="s1">'admin'</span><span class="p">;</span>
+<span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nx">fetchUserName</span><span class="p">(</span><span class="nv">$username</span><span class="p">);</span> <span class="c1">//Returns string of fname and lname</span>
+
+<span class="c1">//Bad Result:</span>
+<span class="nv">$id</span> <span class="o">=</span> <span class="s1">'admin'</span><span class="p">;</span>
+<span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nx">fetchUserName</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="kc">NULL</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span> <span class="c1">//Returns null</span>
+
+<span class="nv">$username</span> <span class="o">=</span> <span class="s1">'abc123'</span><span class="p">;</span> <span class="c1">//bad username (this user shouldnt exist)</span>
+<span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nx">fetchUserName</span><span class="p">(</span><span class="nv">$username</span><span class="p">);</span> <span class="c1">//Returns "Unknown"</span>
+</code></pre></div>
+<p>Fetches a concatenation of the FName and LName from the Users Table for the specified user</p>
+<h3 id='optional-parameters-4'>Optional Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Accepted Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td><code>string</code></td>
+<td><code>null</code></td>
+<td>Username for lookup</td>
+</tr>
+<tr>
+<td>token</td>
+<td><code>string</code></td>
+<td><code>null</code></td>
+<td>Deprecated feature</td>
+</tr>
+<tr>
+<td>id</td>
+<td><code>int</code></td>
+<td><code>null</code></td>
+<td>User ID for lookup</td>
+</tr>
+</tbody></table>
+<h3 id='expected-returned-6'>Expected Returned</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Success</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Error</td>
+<td><code>null</code></td>
+<td>Invalid query structure, could be a violated parameter type</td>
+</tr>
+<tr>
+<td>Error</td>
+<td><code>string</code></td>
+<td>A string value of &quot;Unknown&quot; means no user was found</td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: users</code></p>
+<h2 id='isadmin'>isAdmin</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$isAdmin</span> <span class="o">=</span> <span class="nx">isAdmin</span><span class="p">();</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nv">$isAdmin</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s1">'Is Admin'</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s1">'Is NOT Admin'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Checks if the current user is:</p>
+
+<ul>
+<li>Logged in and passes <a href="#hasperm">hasPerm</a>; or</li>
+<li>Is cloaked into a user and passes <a href="#hasperm">hasPerm</a> for their original User ID</li>
+</ul>
+
+<p><a href="#hasperm">hasPerm</a> for this function is tested against the default Administrator Permission Level (ID #2)</p>
+<h3 id='expected-returned-7'>Expected Returned</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Success</td>
+<td><code>boolean</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Error</td>
+<td><code>boolean</code></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: users</code></p>
+<h2 id='ipcheck'>ipCheck</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: None</code></p>
+<h2 id='ipcheckban'>ipCheckBan</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: None</code></p>
+<h2 id='randomstring'>randomstring</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $len</code></p>
+<h2 id='get_gravatar'>get_gravatar</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $email, $s = 120, $d = &#39;mm&#39;, $r = &#39;pg&#39;, $img = false, $atts = array(</code></p>
+<h2 id='fetchgroupsbymenu'>fetchGroupsByMenu</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $menu_id</code></p>
+<h2 id='updategroupsmenus'>updateGroupsMenus</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $group_ids, $menu_ids</code></p>
+<h2 id='addgroupsmenus'>addGroupsMenus</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $group_ids, $menu_ids</code></p>
+<h2 id='usernameexists'>usernameExists</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $username</code></p>
+<h2 id='getpagefiles'>getPageFiles</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: None</code></p>
+<h2 id='getuspagefiles'>getUSPageFiles</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: None</code></p>
+<h2 id='sanitizeddest'>sanitizedDest</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $varname=&#39;dest&#39;</code></p>
+<h2 id='resultblock'>resultBlock</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $errors,$successes</code></p>
+<h2 id='lang'>lang</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $key,$markers = NULL</code></p>
+<h2 id='isvalidemail'>isValidEmail</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $email</code></p>
+<h2 id='emailexists'>emailExists</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $email</code></p>
+<h2 id='updateemail'>updateEmail</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $id, $email</code></p>
+<h2 id='echoid'>echoId</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $id,$table,$column</code></p>
+<h2 id='bin'>bin</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $number</code></p>
+<h2 id='generateform'>generateForm</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $table,$id, $skip=[]</code></p>
+<h2 id='generateaddform'>generateAddForm</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $table, $skip=[]</code></p>
+<h2 id='updatefields2'>updateFields2</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $post, $skip=[]</code></p>
+<h2 id='mqtt'>mqtt</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $id,$topic,$message</code></p>
+<h2 id='clean'>clean</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $string</code></p>
+<h2 id='strippagepermissions'>stripPagePermissions</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $id</code></p>
+<h2 id='encodeuricomponent'>encodeURIComponent</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $str</code></p>
+<h2 id='logger'>logger</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $user_id,$logtype,$lognote</code></p>
+<h2 id='echodatetime'>echodatetime</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $ts</code></p>
+<h2 id='time2str'>time2str</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $ts</code></p>
+<h2 id='ipreason'>ipReason</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $reason</code></p>
+<h2 id='checkban'>checkBan</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $ip</code></p>
+<h2 id='random_password'>random_password</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters:  $length = 16</code></p>
+<h2 id='returnerror'>returnError</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $errorMsg</code></p>
+<h2 id='userhaspermission'>userHasPermission</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $userID,$permissionID</code></p>
+<h2 id='requestcheck'>requestCheck</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $expectedAr</code></p>
+<h2 id='adminnotifications'>adminNotifications</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $type,$threads,$user_id</code></p>
+<h2 id='lognote'>lognote</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $logid</code></p>
+<h2 id='islocalhost'>isLocalhost</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: None</code></p>
+<h2 id='currentpagestrict'>currentPageStrict</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: None</code></p>
+<h2 id='usersessioncount'>UserSessionCount</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: None</code></p>
+<h2 id='fetchusersessions'>fetchUserSessions</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $all=false</code></p>
+<h2 id='fetchadminsessions'>fetchAdminSessions</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $all=false</code></p>
+<h2 id='killsessions'>killSessions</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $sessions,$admin=false</code></p>
+<h2 id='passwordresetkillsessions'>passwordResetKillSessions</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $uid=NULL</code></p>
+<h2 id='username_helper'>username_helper</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $fname,$lname,$email</code></p>
+<h2 id='oxfordlist'>oxfordList</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $data,$opts=[]</code></p>
+<h2 id='currentfile'>currentFile</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: None</code></p>
+<h2 id='importsql'>importSQL</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $file</code></p>
+<h2 id='pluginactive'>pluginActive</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $plugin,$checkOnly = false</code></p>
+<h2 id='languageswitcher'>languageSwitcher</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: None</code></p>
+<h2 id='getmyhooks'>getMyHooks</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $opts = []</code></p>
+<h2 id='includehook'>includeHook</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $hooks,$position</code></p>
+<h2 id='registerhooks'>registerHooks</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $hooks,$plugin_name</code></p>
+<h2 id='deregisterhooks'>deRegisterHooks</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $plugin_name</code></p>
+<h2 id='shakerisinstalled'>shakerIsInstalled</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $type,$reserved</code></p>
+<h2 id='updatereauth'>updateReAuth</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $id, $re_auth</code></p>
+<h2 id='reauth'>reAuth</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: None</code></p>
+<h2 id='verifyadmin'>verifyadmin</h2>
+<p><code>Helper: us_helpers</code></p>
+
+<p><code>Parameters: $page</code></p>
+<h1 id='features'>Features</h1>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="php">php</a>
+                <a href="#" data-language-name="sql">sql</a>
           </div>
       </div>
     </div>
