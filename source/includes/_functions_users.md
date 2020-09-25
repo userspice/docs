@@ -47,9 +47,6 @@ orderBy | `string` | `null` | Comma seperated params of order by clause to send 
 desc | `boolean` | `false` | An optional value to order the orderBy in a descending fashion
 disabled | `boolean` | `true` | Pass false to remove disabled users from the return
 
-`Successful Return: Object`
-`Failed Return: null`
-
 ### Expected Returned
 Result | Type | Example
 --------- | ----------- | -----------
