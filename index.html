@@ -343,6 +343,9 @@
                     <a href="#isadmin" class="toc-h2 toc-link" data-title="isAdmin">isAdmin</a>
                   </li>
                   <li>
+                    <a href="#name_from_id" class="toc-h2 toc-link" data-title="name_from_id">name_from_id</a>
+                  </li>
+                  <li>
                     <a href="#size" class="toc-h2 toc-link" data-title="size">size</a>
                   </li>
                   <li>
@@ -362,9 +365,6 @@
                   </li>
                   <li>
                     <a href="#money" class="toc-h2 toc-link" data-title="money">money</a>
-                  </li>
-                  <li>
-                    <a href="#name_from_id" class="toc-h2 toc-link" data-title="name_from_id">name_from_id</a>
                   </li>
                   <li>
                     <a href="#display_errors" class="toc-h2 toc-link" data-title="display_errors">display_errors</a>
@@ -782,6 +782,7 @@
       </ul>
         <ul class="toc-footer">
             <li><a href='https://userspice.com/'>Home</a></li>
+            <li><a href='https://github.com/userspice/docs'>Contribute to the Docs</a></li>
             <li><a href='https://discord.gg/j25FeHu'>Discord</a></li>
             <li><a href='https://userspice.com/donate/'>Donations</a></li>
             <li><a href='https://www.patreon.com/userspice'>Patreon</a></li>
@@ -798,6 +799,17 @@
 
 <p>On the left, you will be able to navigation specific categories and their topics, including search, and on the right you will see both PHP and SQL code snippets.</p>
 
+<p>Here are a few notes regarding the formatting of the documentation:</p>
+
+<ol>
+<li>Parameters are ordered in the format they can be supplied</li>
+<li>If you wish to skip a parameter, you should supply the default value</li>
+<li>If the Default Value column is empty - it is required</li>
+<li>Functions are contained in Helper files in <code>users/helpers</code> - the corresponding helper file is included at the bottom of the function in the docs</li>
+<li>Functions are case sensitive in PHP</li>
+<li>If the version a function was added in is not included, assume it was added in UserSpice 5.1.6 (this is when the documentation was written)</li>
+</ol>
+
 <p>If you have any recommendations or requests for the documents, we encourage you to make a pull request on GitHub.</p>
 
 <p>Thank you.</p>
@@ -812,37 +824,39 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>Check if the provided User ID exists in the users table</p>
-<h3 id='required-parameters'>Required Parameters</h3>
+<h3 id='parameters'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Accepted Type</th>
+<th>Type</th>
+<th>Default Value</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>id</td>
 <td><code>int</code></td>
+<td></td>
 <td>The ID of the user to verify</td>
 </tr>
 </tbody></table>
-<h3 id='expected-returned'>Expected Returned</h3>
+<h3 id='expected-return'>Expected Return</h3>
 <table><thead>
 <tr>
 <th>Result</th>
 <th>Type</th>
-<th>Example</th>
+<th>Sample</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>Success</td>
 <td><code>boolean</code></td>
-<td></td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td>Error</td>
 <td><code>boolean</code></td>
-<td></td>
+<td><code>false</code></td>
 </tr>
 </tbody></table>
 
@@ -857,12 +871,12 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>Fetches an object of users based on the parameters included</p>
-<h3 id='optional-parameters'>Optional Parameters</h3>
+<h3 id='parameters-2'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Accepted Type</th>
-<th>Default</th>
+<th>Type</th>
+<th>Default Value</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -885,23 +899,23 @@
 <td>Pass false to remove disabled users from the return</td>
 </tr>
 </tbody></table>
-<h3 id='expected-returned-2'>Expected Returned</h3>
+<h3 id='expected-return-2'>Expected Return</h3>
 <table><thead>
 <tr>
 <th>Result</th>
 <th>Type</th>
-<th>Example</th>
+<th>Sample</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>Success</td>
 <td><code>Object</code></td>
-<td></td>
+<td>Collection of <a href="#user-object">User Object</a></td>
 </tr>
 <tr>
 <td>Error</td>
 <td><code>Object</code></td>
-<td></td>
+<td>Empty</td>
 </tr>
 </tbody></table>
 
@@ -918,12 +932,16 @@
 <span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nx">fetchUserDetails</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="kc">NULL</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span> <span class="c1">//Returns null</span>
 </code></pre></div>
 <p>Fetches an object of a user based on the parameters included</p>
-<h3 id='optional-parameters-2'>Optional Parameters</h3>
+<h3 id='parameters-3'>Parameters</h3>
+<aside class="notice">
+    You must supply at least one of the parameters.
+</aside>
+
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Accepted Type</th>
-<th>Default</th>
+<th>Type</th>
+<th>Default Value</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -946,18 +964,18 @@
 <td>User ID for lookup</td>
 </tr>
 </tbody></table>
-<h3 id='expected-returned-3'>Expected Returned</h3>
+<h3 id='expected-return-3'>Expected Return</h3>
 <table><thead>
 <tr>
 <th>Result</th>
 <th>Type</th>
-<th>Example</th>
+<th>Sample</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>Success</td>
 <td><code>Object</code></td>
-<td></td>
+<td><a href="#user-object">User Object</a></td>
 </tr>
 <tr>
 <td>Error</td>
@@ -976,26 +994,28 @@
 <span class="nv">$deleteUsers</span> <span class="o">=</span> <span class="nx">deleteUsers</span><span class="p">(</span><span class="nv">$users</span><span class="p">);</span> <span class="c1">// returns 0 as "username" cannot be converted to an int</span>
 </code></pre></div>
 <p>Delete user(s) by ID</p>
-<h3 id='required-parameters-2'>Required Parameters</h3>
+<h3 id='parameters-4'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Accepted Type</th>
+<th>Type</th>
+<th>Default Value</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>users</td>
 <td><code>array</code></td>
+<td><code>[]</code></td>
 <td>IDs of users in an array</td>
 </tr>
 </tbody></table>
-<h3 id='expected-returned-4'>Expected Returned</h3>
+<h3 id='expected-return-4'>Expected Return</h3>
 <table><thead>
 <tr>
 <th>Result</th>
 <th>Type</th>
-<th>Example</th>
+<th>Sample</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -1019,29 +1039,21 @@
 <span class="nx">echouser</span><span class="p">(</span><span class="s1">'admin'</span><span class="p">);</span> <span class="c1">//echos "Unknown" as not a valid User ID</span>
 </code></pre></div>
 <p>Echo a user directly in your code as defined in the Setting in your Admin Panel. An optional parameter can be passed to override the type.</p>
-<h3 id='required-parameters-3'>Required Parameters</h3>
+<h3 id='parameters-5'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Accepted Type</th>
+<th>Type</th>
+<th>Default Value</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>id</td>
 <td><code>int</code></td>
+<td></td>
 <td>The ID of the user to return</td>
 </tr>
-</tbody></table>
-<h3 id='optional-parameters-3'>Optional Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Accepted Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
 <tr>
 <td>echoType</td>
 <td><code>int</code></td>
@@ -1049,11 +1061,11 @@
 <td>An in-line setting override as described below</td>
 </tr>
 </tbody></table>
-<h3 id='types'>Types</h3>
+<h3 id='echotype'>echoType</h3>
 <table><thead>
 <tr>
 <th>ID</th>
-<th>Example</th>
+<th>Sample</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -1090,18 +1102,39 @@
 <aside class="notice">
     This does not echo as the function name would imply, it only returns the data.
 </aside>
-<h3 id='required-parameters-4'>Required Parameters</h3>
+<h3 id='parameters-6'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Accepted Type</th>
+<th>Type</th>
+<th>Default Value</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>id</td>
 <td><code>int</code></td>
+<td></td>
 <td>The ID of the user to return</td>
+</tr>
+</tbody></table>
+<h3 id='expected-return-5'>Expected Return</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Sample</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Success</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Error</td>
+<td><code>string</code></td>
+<td><code>Unknown</code></td>
 </tr>
 </tbody></table>
 
@@ -1124,42 +1157,46 @@
 <span class="nv">$updateUser</span> <span class="o">=</span> <span class="nx">updateUser</span><span class="p">(</span><span class="nv">$column</span><span class="p">,</span> <span class="nv">$id</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span> <span class="c1">//returns null, failed as id is not int</span>
 </code></pre></div>
 <p>Update an attribute of a specific user by ID</p>
-<h3 id='required-parameters-5'>Required Parameters</h3>
+<h3 id='parameters-7'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Accepted Type</th>
+<th>Type</th>
+<th>Default Value</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>column</td>
 <td><code>string</code></td>
+<td></td>
 <td>The name of the column to update</td>
 </tr>
 <tr>
 <td>id</td>
 <td><code>int</code></td>
+<td></td>
 <td>The ID of the user to update</td>
 </tr>
 <tr>
 <td>value</td>
 <td><code>string</code></td>
+<td></td>
 <td>The value to set the column to for the user ID</td>
 </tr>
 </tbody></table>
-<h3 id='expected-returned-5'>Expected Returned</h3>
+<h3 id='expected-return-6'>Expected Return</h3>
 <table><thead>
 <tr>
 <th>Result</th>
 <th>Type</th>
-<th>Example</th>
+<th>Sample</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>Success</td>
 <td><code>Object</code></td>
-<td><a href="#database-result-object">Database result object</a></td>
+<td><a href="#database-result-object">Database Result Object</a></td>
 </tr>
 <tr>
 <td>Error</td>
@@ -1183,13 +1220,17 @@
 <span class="nv">$username</span> <span class="o">=</span> <span class="s1">'abc123'</span><span class="p">;</span> <span class="c1">//bad username (this user shouldnt exist)</span>
 <span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nx">fetchUserName</span><span class="p">(</span><span class="nv">$username</span><span class="p">);</span> <span class="c1">//Returns "Unknown"</span>
 </code></pre></div>
-<p>Fetches a concatenation of the FName and LName from the Users Table for the specified user</p>
-<h3 id='optional-parameters-4'>Optional Parameters</h3>
+<p>Fetches a concatenation of the FName and LName from the Users Table for the specified user.</p>
+<h3 id='parameters-8'>Parameters</h3>
+<aside class="notice">
+    You must supply at least one of the parameters.
+</aside>
+
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Accepted Type</th>
-<th>Default</th>
+<th>Type</th>
+<th>Default Value</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -1212,12 +1253,12 @@
 <td>User ID for lookup</td>
 </tr>
 </tbody></table>
-<h3 id='expected-returned-6'>Expected Returned</h3>
+<h3 id='expected-return-7'>Expected Return</h3>
 <table><thead>
 <tr>
 <th>Result</th>
 <th>Type</th>
-<th>Example</th>
+<th>Sample</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -1233,7 +1274,7 @@
 <tr>
 <td>Error</td>
 <td><code>string</code></td>
-<td>A string value of &quot;Unknown&quot; means no user was found</td>
+<td>A string value of <code>Unknown</code> means no user was found</td>
 </tr>
 </tbody></table>
 
@@ -1254,95 +1295,661 @@
 </ul>
 
 <p><a href="#hasperm">hasPerm</a> for this function is tested against the default Administrator Permission Level (ID #2)</p>
-<h3 id='expected-returned-7'>Expected Returned</h3>
+<h3 id='expected-return-8'>Expected Return</h3>
 <table><thead>
 <tr>
 <th>Result</th>
 <th>Type</th>
-<th>Example</th>
+<th>Sample</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>Success</td>
 <td><code>boolean</code></td>
-<td></td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td>Error</td>
 <td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: users</code></p>
+<h2 id='name_from_id'>name_from_id</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="c1">//Good Result:</span>
+<span class="nv">$username</span> <span class="o">=</span> <span class="nx">name_from_id</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">//returns username from User ID 1</span>
+
+<span class="c1">//Bad Result:</span>
+<span class="nv">$username</span> <span class="o">=</span> <span class="nx">name_from_id</span><span class="p">(</span><span class="s1">'admin'</span><span class="p">);</span> <span class="c1">//returns "-" as not a valid User ID</span>
+</code></pre></div>
+<p>Returns the username of a user by ID with the first character capitalized</p>
+<h3 id='parameters-9'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td><code>int</code></td>
 <td></td>
+<td>The ID of the user to return</td>
+</tr>
+</tbody></table>
+<h3 id='expected-return-9'>Expected Return</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Sample</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Success</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Error</td>
+<td><code>string</code></td>
+<td><code>-</code></td>
 </tr>
 </tbody></table>
 
 <p><code>Helper: users</code></p>
 <h2 id='size'>size</h2>
-<p><code>Helper: helpers</code></p>
+<!-- ```php
+``` -->
 
-<p><code>Parameters: $path</code></p>
+<p>The <code>size</code> function uses PHP native <code>filesize</code> function to determine the size of a file and return it in a readable format. It will return units in the size of <code>B</code>, <code>KB</code>, <code>MB</code>, and <code>GB</code>.</p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>path</td>
+<td><code>string</code></td>
+<td></td>
+<td>Path to the file based on PHP&#39;s <code>filesize</code> requirements</td>
+</tr>
+</tbody></table>
+<h3 id='expected-returned'>Expected Returned</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Sample</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Success</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Error</td>
+<td><code>int</code></td>
+<td><code>0</code></td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: helpers</code></p>
 <h2 id='sanitize'>sanitize</h2>
-<p><code>Helper: helpers</code></p>
+<!-- ```php
+``` -->
 
-<p><code>Parameters: $string</code></p>
+<p>The <code>sanitize</code> function uses PHP&#39;s native <code>htmlentities</code> function to sanitize a string. It is sanitized with the flag <code>ENT_QUOTES</code> and encoded in <code>UTF-8</code>. This function will return the sanitized string.</p>
+<h3 id='parameters-2'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>string</td>
+<td><code>string</code></td>
+<td></td>
+<td>The string to be sanitized</td>
+</tr>
+</tbody></table>
+<h3 id='expected-returned-2'>Expected Returned</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Sample</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Success</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: helpers</code></p>
 <h2 id='currentpage'>currentPage</h2>
-<p><code>Helper: helpers</code></p>
+<!-- ```php
+``` -->
 
-<p><code>Parameters: None</code></p>
+<p>The <code>currentPage</code> function will return the current file name without the URL.</p>
+
+<p>Example:
+If you are visiting <code>https://example.com/test.php</code> it would return <code>test.php</code></p>
+<h3 id='parameters-3'>Parameters</h3>
+<p>None</p>
+<h3 id='expected-returned-3'>Expected Returned</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Sample</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Success</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: helpers</code></p>
 <h2 id='currentfolder'>currentFolder</h2>
-<p><code>Helper: helpers</code></p>
+<!-- ```php
+``` -->
 
-<p><code>Parameters: None</code></p>
+<p>The <code>currentFolder</code> function will return the current folder name without the URL or file.</p>
+
+<p>Example:
+If you are visiting <code>https://example.com/test/index.php</code> it would return <code>test</code></p>
+<h3 id='parameters-4'>Parameters</h3>
+<p>None</p>
+<h3 id='expected-returned-4'>Expected Returned</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Sample</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Success</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: helpers</code></p>
 <h2 id='format_date'>format_date</h2>
-<p><code>Helper: helpers</code></p>
+<!-- ```php
+``` -->
 
-<p><code>Parameters: $date,$tz</code></p>
+<aside class="notice">
+    This function is currently outdated and will not work as one may expect with the required parameters. The timezone parameter isn't currently used in the code despite it being required.
+</aside>
+
+<p>The <code>format_date</code> function takes a plain text timestamp and returns it in this format using <code>DateTime</code>: <code>m/d/y ~ h:iA</code></p>
+<h3 id='parameters-5'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date</td>
+<td><code>string</code></td>
+<td></td>
+<td>The datetime stamp (expected format: Y-m-d H:i:s) to be converted into a <code>DateTime</code> format</td>
+</tr>
+<tr>
+<td>tz</td>
+<td><code>string</code></td>
+<td></td>
+<td>The timezone to configure with DateTime</td>
+</tr>
+</tbody></table>
+<h3 id='expected-returned-5'>Expected Returned</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Sample</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Success</td>
+<td><code>DateTime</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Error</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: helpers</code></p>
 <h2 id='abrev_date'>abrev_date</h2>
-<p><code>Helper: helpers</code></p>
+<!-- ```php
+``` -->
 
-<p><code>Parameters: $date,$tz</code></p>
+<aside class="notice">
+    This function is currently outdated and will not work as one may expect with the required parameters. The timezone parameter isn't currently used in the code despite it being required.
+</aside>
+
+<p>The <code>abrev_date</code> function will take a plain text timestamp and return it using <code>DateTime</code> in this format: <code>M d, Y</code></p>
+<h3 id='parameters-6'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date</td>
+<td><code>string</code></td>
+<td></td>
+<td>The datetime stamp (expected format: Y-m-d H:i:s) to be converted into a <code>DateTime</code> format</td>
+</tr>
+<tr>
+<td>tz</td>
+<td><code>string</code></td>
+<td></td>
+<td>The timezone to configure with DateTime</td>
+</tr>
+</tbody></table>
+<h3 id='expected-returned-6'>Expected Returned</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Sample</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Success</td>
+<td><code>DateTime</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Error</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: helpers</code></p>
 <h2 id='money'>money</h2>
-<p><code>Helper: helpers</code></p>
+<!-- ```php
+``` -->
 
-<p><code>Parameters: $ugly</code></p>
-<h2 id='name_from_id'>name_from_id</h2>
-<p><code>Helper: helpers</code></p>
+<p>They <code>money</code> function will take a raw string that can be converted into <code>decimal</code> or <code>int</code> value and convert it into a formatted money string, prefixed with <code>$</code> and rounded to 2 decimal places.</p>
+<h3 id='parameters-7'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ugly</td>
+<td><code>string</code></td>
+<td></td>
+<td>The raw value that can be converted into an <code>int</code> or <code>decimal</code> value</td>
+</tr>
+</tbody></table>
+<h3 id='expected-returned-7'>Expected Returned</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Sample</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Success</td>
+<td><code>string</code></td>
+<td><code>$0.00</code></td>
+</tr>
+<tr>
+<td>Error</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
 
-<p><code>Parameters: $id</code></p>
+<p><code>Helper: helpers</code></p>
 <h2 id='display_errors'>display_errors</h2>
-<p><code>Helper: helpers</code></p>
+<!-- ```php
+``` -->
 
-<p><code>Parameters: $errors = array(</code></p>
+<p>The <code>display_errors</code> function is used in conjunction with the validation class to take an array of strings and produce a error block HTML to be used on your page. This will be in an unordered list with two classes, <code>bg-danger</code> and <code>dangerblock</code>. It will also attach a <code>has-error</code> class to the closest <code>div</code> in the parent.</p>
+<h3 id='parameters-8'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>errors</td>
+<td><code>array</code></td>
+<td><code>[]</code></td>
+<td>The array of errors</td>
+</tr>
+</tbody></table>
+<h3 id='expected-returned-8'>Expected Returned</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Sample</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Success</td>
+<td><code>string</code></td>
+<td>Raw HTML that can be used on your page</td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: helpers</code></p>
 <h2 id='display_successes'>display_successes</h2>
-<p><code>Helper: helpers</code></p>
+<p>The <code>display_successes</code> function is used in conjunction with the validation class to take an array of strings and produce a success block HTML to be used on your page. This will be in an unordered list with no classes.</p>
+<h3 id='parameters-9'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>errors</td>
+<td><code>array</code></td>
+<td><code>[]</code></td>
+<td>The array of errors</td>
+</tr>
+</tbody></table>
+<h3 id='expected-returned-9'>Expected Returned</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Sample</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Success</td>
+<td><code>string</code></td>
+<td>Raw HTML that can be used on your page</td>
+</tr>
+</tbody></table>
 
-<p><code>Parameters: $successes = array(</code></p>
+<p><code>Helper: helpers</code></p>
 <h2 id='email'>email</h2>
-<p><code>Helper: helpers</code></p>
+<!-- ```php
+``` -->
 
-<p><code>Parameters: $to,$subject,$body,$opts=[],$attachment=false</code></p>
+<p>The <code>email</code> function uses UserSpice&#39;s built in PHP Mailer to send an email using the options you have set in your Email Settings in the Dashboard.</p>
+<h3 id='parameters-10'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>to</td>
+<td><code>string</code></td>
+<td></td>
+<td>The recipients email address</td>
+</tr>
+<tr>
+<td>subject</td>
+<td><code>string</code></td>
+<td></td>
+<td>The subject of your email</td>
+</tr>
+<tr>
+<td>body</td>
+<td><code>string</code></td>
+<td></td>
+<td>The body of your email</td>
+</tr>
+<tr>
+<td>opts</td>
+<td><code>array</code></td>
+<td><code>[]</code></td>
+<td>Any additional options you wish to send to the mailer, currently, the supported keys are <code>email</code> (from email) and <code>name</code> (from name)</td>
+</tr>
+<tr>
+<td>attachment</td>
+<td><code>file</code></td>
+<td></td>
+<td>The file you wish to attach</td>
+</tr>
+</tbody></table>
+<h3 id='expected-returned-10'>Expected Returned</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Sample</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Success</td>
+<td><code>Object</code></td>
+<td><a href="#php-mailer-object">PHP Mailer Object</a></td>
+</tr>
+<tr>
+<td>Error</td>
+<td><code>Object</code></td>
+<td><a href="#php-mailer-object">PHP Mailer Object</a></td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: helpers</code></p>
 <h2 id='email_body'>email_body</h2>
-<p><code>Helper: helpers</code></p>
+<!-- ```php
+``` -->
 
-<p><code>Parameters: $template,$options = array(</code></p>
+<p>The <code>email_body</code> function is used in conjunction with the <code>email</code> function to generate a body from the <code>users</code> and <code>usersc</code> view folders. The template is passed along with options to customize the data in the template.</p>
+
+<aside class="notice">
+    Templates in the `usersc` views folder take priority over that of the `users` folder
+</aside>
+<h3 id='parameters-11'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>template</td>
+<td><code>string</code></td>
+<td></td>
+<td>The template name (only - do not include the extension) that you wish to send</td>
+</tr>
+<tr>
+<td>options</td>
+<td><code>array</code></td>
+<td><code>[]</code></td>
+<td>The options you wish to pass into the template</td>
+</tr>
+</tbody></table>
+<h3 id='expected-returned-11'>Expected Returned</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Sample</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Success</td>
+<td><code>Raw Data</code></td>
+<td><a href="https://www.php.net/manual/en/function.ob-get-clean.php">ob_get_clean</a></td>
+</tr>
+<tr>
+<td>Error</td>
+<td><code>Raw Data</code></td>
+<td><a href="https://www.php.net/manual/en/function.ob-get-clean.php">ob_get_clean</a></td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: helpers</code></p>
 <h2 id='dump'>dump</h2>
-<p><code>Helper: helpers</code></p>
+<!-- ```php
+``` -->
 
-<p><code>Parameters: $var,$adminOnly=false,$localhostOnly=false</code></p>
+<p>The <code>dump</code> function is a pre-formatted echo of <code>var_dump</code> with several custom options allowing you to use it for development and administrative only purposes.</p>
+<h3 id='parameters-12'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>var</td>
+<td><code>mixed</code></td>
+<td></td>
+<td>Any data you wish to <code>var_dump</code></td>
+</tr>
+<tr>
+<td>adminOnly</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>If you wish to only show the dump to users who pass an <a href="#isadmin">isAdmin</a> check</td>
+</tr>
+<tr>
+<td>localhostOnly</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>If you wish to only show the dump when a pass is obtained during an <a href="#islocalhost">isLocalhost</a> check</td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: helpers</code></p>
 <h2 id='dnd'>dnd</h2>
-<p><code>Helper: helpers</code></p>
+<!-- ```php
+``` -->
 
-<p><code>Parameters: $var, $adminOnly = false, $localhostOnly = false</code></p>
+<p>The <code>dnd</code> function is pointed at the <a href="#dump">dump</a> function. After the <a href="#dump">dump</a> is completed, a <code>die</code> is triggered. Parameters are the same as <a href="#dump">dump</a>.</p>
+
+<p><code>Helper: helpers</code></p>
 <h2 id='bold'>bold</h2>
-<p><code>Helper: helpers</code></p>
+<!-- ```php
+``` -->
 
-<p><code>Parameters: $text</code></p>
+<p>The <code>bold</code> function will echo the supplied text in a:</p>
+
+<ul>
+<li><code>text</code> with <code>padding=1em</code> <code>align=center</code></li>
+<li><code>h4</code></li>
+<li><code>span</code> with <code>background=white</code></li>
+</ul>
+<h3 id='parameters-13'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>text</td>
+<td><code>string</code></td>
+<td></td>
+<td>The string you wish to output</td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: helpers</code></p>
 <h2 id='err'>err</h2>
-<p><code>Helper: helpers</code></p>
+<!-- ```php
+``` -->
 
-<p><code>Parameters: $text</code></p>
+<p>The <code>err</code> function will echo the supplied text in a:</p>
+
+<ul>
+<li><code>text</code> with <code>padding=1em</code> <code>align=center</code></li>
+<li><code>font</code> with <code>color=red</code></li>
+<li><code>h4</code></li>
+<li><code>span</code> with <code>class=errSpan</code></li>
+</ul>
+<h3 id='parameters-14'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>text</td>
+<td><code>string</code></td>
+<td></td>
+<td>The string you wish to output</td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: helpers</code></p>
 <h2 id='redirect'>redirect</h2>
-<p><code>Helper: helpers</code></p>
+<!-- ```php
+``` -->
 
-<p><code>Parameters: $location</code></p>
+<p>The <code>redirect</code> function does a simple <code>header</code> redirect to the URL provided. This provides no sanitization or validation and should not be mistaken with the <a href="#redirect::to">Redirect::to</a> Method</p>
+<h3 id='parameters-15'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>location</td>
+<td><code>string</code></td>
+<td></td>
+<td>The URL you wish to redirect to</td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: helpers</code></p>
 <h2 id='write_php_ini'>write_php_ini</h2>
 <p><code>Helper: helpers</code></p>
 
