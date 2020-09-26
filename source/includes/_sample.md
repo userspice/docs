@@ -1,26 +1,19 @@
 ## functionName
 
-```php
-// Sample PHP code here
-// You can include bad code samples as well to teach developers how to produce errors, but be sure that you prefix each group of code samples with good or bad
-```
+<!-- ```php
+``` -->
 
 Description here
 
-### Required Parameters
-Parameter | Accepted Type | Description
---------- | ----------- | -----------
-id | `int` | The ID of the user to verify
-
-### Optional Parameters
-Parameter | Accepted Type | Default | Description
+### Parameters
+Parameter | Type | Default Value | Description
 --------- | ----------- | ----------- | -----------
-id | `int` | `null` | User ID for lookup
+id | `int` | | The ID of the user to verify
 
 ### Expected Returned
-Result | Type | Example
+Result | Type | Sample
 --------- | ----------- | -----------
-Success | `Object` |
-Error | `null` |
+Success | `boolean` | `true`
+Error | `boolean` | `false`
 
 `Helper: helper_file_name`

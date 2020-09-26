@@ -7,6 +7,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   - <a href='https://userspice.com/'>Home</a>
+  - <a href='https://github.com/userspice/docs'>Contribute to the Docs</a>
   - <a href='https://discord.gg/j25FeHu'>Discord</a>
   - <a href='https://userspice.com/donate/'>Donations</a>
   - <a href='https://www.patreon.com/userspice'>Patreon</a>

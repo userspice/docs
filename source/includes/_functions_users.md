@@ -12,16 +12,16 @@ if($userCheck) {
 
 Check if the provided User ID exists in the users table
 
-### Required Parameters
-Parameter | Accepted Type | Description
---------- | ----------- | -----------
-id | `int` | The ID of the user to verify
+### Parameters
+Parameter | Type | Default Value | Description
+--------- | ----------- | ----------- | -----------
+id | `int` | | The ID of the user to verify
 
-### Expected Returned
-Result | Type | Example
+### Expected Return
+Result | Type | Sample
 --------- | ----------- | -----------
-Success | `boolean` |
-Error | `boolean` |
+Success | `boolean` | `true`
+Error | `boolean` | `false`
 
 `Helper: users`
 
@@ -40,18 +40,18 @@ foreach($users as $u) {
 
 Fetches an object of users based on the parameters included
 
-### Optional Parameters
-Parameter | Accepted Type | Default | Description
+### Parameters
+Parameter | Type | Default Value | Description
 --------- | ----------- | ----------- | -----------
 orderBy | `string` | `null` | Comma seperated params of order by clause to send to the database
 desc | `boolean` | `false` | An optional value to order the orderBy in a descending fashion
 disabled | `boolean` | `true` | Pass false to remove disabled users from the return
 
-### Expected Returned
-Result | Type | Example
+### Expected Return
+Result | Type | Sample
 --------- | ----------- | -----------
-Success | `Object` |
-Error | `Object` |
+Success | `Object` | Collection of [User Object](#user-object)
+Error | `Object` | Empty
 
 `Helper: users`
 
@@ -72,17 +72,22 @@ $fetchedUser = fetchUserDetails(NULL, NULL, $id); //Returns null
 
 Fetches an object of a user based on the parameters included
 
-### Optional Parameters
-Parameter | Accepted Type | Default | Description
+### Parameters
+
+<aside class="notice">
+    You must supply at least one of the parameters.
+</aside>
+
+Parameter | Type | Default Value | Description
 --------- | ----------- | ----------- | -----------
 username | `string` | `null` | Username for lookup
 token | `string` | `null` | Deprecated feature
 id | `int` | `null` | User ID for lookup
 
-### Expected Returned
-Result | Type | Example
+### Expected Return
+Result | Type | Sample
 --------- | ----------- | -----------
-Success | `Object` |
+Success | `Object` | [User Object](#user-object)
 Error | `null` |
 
 `Helper: users`
@@ -101,13 +106,13 @@ $deleteUsers = deleteUsers($users); // returns 0 as "username" cannot be convert
 
 Delete user(s) by ID
 
-### Required Parameters
-Parameter | Accepted Type | Description
---------- | ----------- | -----------
-users | `array` | IDs of users in an array
+### Parameters
+Parameter | Type | Default Value | Description
+--------- | ----------- | ----------- | -----------
+users | `array` | `[]` | IDs of users in an array
 
-### Expected Returned
-Result | Type | Example
+### Expected Return
+Result | Type | Sample
 --------- | ----------- | -----------
 Success | `int` | Number of users deleted
 Error | `int` | Number of users deleted
@@ -127,18 +132,14 @@ echouser('admin'); //echos "Unknown" as not a valid User ID
 
 Echo a user directly in your code as defined in the Setting in your Admin Panel. An optional parameter can be passed to override the type.
 
-### Required Parameters
-Parameter | Accepted Type | Description
---------- | ----------- | -----------
-id | `int` | The ID of the user to return
-
-### Optional Parameters
-Parameter | Accepted Type | Default | Description
+### Parameters
+Parameter | Type | Default Value | Description
 --------- | ----------- | ----------- | -----------
+id | `int` | | The ID of the user to return
 echoType | `int` | `null` | An in-line setting override as described below
 
-### Types
-ID | Example
+### echoType
+ID | Sample
 --------- | -----------
 0 | FName Lname
 1 | Username
@@ -164,10 +165,16 @@ Returns the username of a user by ID
     This does not echo as the function name would imply, it only returns the data.
 </aside>
 
-### Required Parameters
-Parameter | Accepted Type | Description
+### Parameters
+Parameter | Type | Default Value | Description
+--------- | ----------- | ----------- | -----------
+id | `int` | | The ID of the user to return
+
+### Expected Return
+Result | Type | Sample
 --------- | ----------- | -----------
-id | `int` | The ID of the user to return
+Success | `string` |
+Error | `string` | `Unknown`
 
 `Helper: users`
 
@@ -194,17 +201,17 @@ $updateUser = updateUser($column, $id, $value); //returns null, failed as id is 
 
 Update an attribute of a specific user by ID
 
-### Required Parameters
-Parameter | Accepted Type | Description
---------- | ----------- | -----------
-column | `string` | The name of the column to update
-id | `int` | The ID of the user to update
-value | `string` | The value to set the column to for the user ID
+### Parameters
+Parameter | Type | Default Value | Description
+--------- | ----------- | ----------- | -----------
+column | `string` | | The name of the column to update
+id | `int` | | The ID of the user to update
+value | `string` | | The value to set the column to for the user ID
 
-### Expected Returned
-Result | Type | Example
+### Expected Return
+Result | Type | Sample
 --------- | ----------- | -----------
-Success | `Object` | [Database result object](#database-result-object)
+Success | `Object` | [Database Result Object](#database-result-object)
 Error | `null` |
 
 `Helper: users`
@@ -227,21 +234,26 @@ $username = 'abc123'; //bad username (this user shouldnt exist)
 $fetchedUser = fetchUserName($username); //Returns "Unknown"
 ```
 
-Fetches a concatenation of the FName and LName from the Users Table for the specified user
+Fetches a concatenation of the FName and LName from the Users Table for the specified user.
 
-### Optional Parameters
-Parameter | Accepted Type | Default | Description
+### Parameters
+
+<aside class="notice">
+    You must supply at least one of the parameters.
+</aside>
+
+Parameter | Type | Default Value | Description
 --------- | ----------- | ----------- | -----------
 username | `string` | `null` | Username for lookup
 token | `string` | `null` | Deprecated feature
 id | `int` | `null` | User ID for lookup
 
-### Expected Returned
-Result | Type | Example
+### Expected Return
+Result | Type | Sample
 --------- | ----------- | -----------
 Success | `String` |
 Error | `null` | Invalid query structure, could be a violated parameter type
-Error | `string` | A string value of "Unknown" means no user was found
+Error | `string` | A string value of `Unknown` means no user was found
 
 `Helper: users`
 
@@ -264,10 +276,35 @@ Checks if the current user is:
 
 [hasPerm](#hasperm) for this function is tested against the default Administrator Permission Level (ID #2)
 
-### Expected Returned
-Result | Type | Example
+### Expected Return
+Result | Type | Sample
 --------- | ----------- | -----------
-Success | `boolean` |
-Error | `boolean` |
+Success | `boolean` | `true`
+Error | `boolean` | `false`
+
+`Helper: users`
+
+## name_from_id
+
+```php
+//Good Result:
+$username = name_from_id(1); //returns username from User ID 1
+
+//Bad Result:
+$username = name_from_id('admin'); //returns "-" as not a valid User ID
+```
+
+Returns the username of a user by ID with the first character capitalized
+
+### Parameters
+Parameter | Type | Default Value | Description
+--------- | ----------- | ----------- | -----------
+id | `int` | | The ID of the user to return
+
+### Expected Return
+Result | Type | Sample
+--------- | ----------- | -----------
+Success | `string` |
+Error | `string` | `-`
 
 `Helper: users`
