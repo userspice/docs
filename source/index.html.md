@@ -19,14 +19,14 @@ includes:
   - classes
   - functions
   - functions_users.md
-  - functions_helpers.md
   - functions_us_helpers.md
+  - functions_helpers.md
   - functions_permissions.md
   - functions_audit.md
   - functions_backup_util.md
   - functions_dbmenu.md
-  - functions_deprecated.md
   - functions_menus.md
+  - functions_deprecated.md
   - features
 
 search: true
