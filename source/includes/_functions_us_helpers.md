@@ -282,3 +282,24 @@
 `Helper: us_helpers`
 
 `Parameters: $page`
+
+## isJson
+
+<!-- ```php
+``` -->
+
+The `isJson` function attempts to decode a string and returns if it was successful or failed.
+
+### Parameters
+Parameter | Type | Default Value | Description
+--------- | ----------- | ----------- | -----------
+string | `string` | | The string you want validation on
+
+### Expected Returned
+Result | Type | Sample
+--------- | ----------- | -----------
+Success | `boolean` | `true`
+Error | `boolean` | `false`
+
+`Helper: us_helpers`
+`Version: 5.1.7`
