@@ -517,6 +517,9 @@
                     <a href="#verifyadmin" class="toc-h2 toc-link" data-title="verifyadmin">verifyadmin</a>
                   </li>
                   <li>
+                    <a href="#isjson" class="toc-h2 toc-link" data-title="isJson">isJson</a>
+                  </li>
+                  <li>
                     <a href="#size" class="toc-h2 toc-link" data-title="size">size</a>
                   </li>
                   <li>
@@ -1588,6 +1591,49 @@
 <p><code>Helper: us_helpers</code></p>
 
 <p><code>Parameters: $page</code></p>
+<h2 id='isjson'>isJson</h2>
+<!-- ```php
+``` -->
+
+<p>The <code>isJson</code> function attempts to decode a string and returns if it was successful or failed.</p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>string</td>
+<td><code>string</code></td>
+<td></td>
+<td>The string you want validation on</td>
+</tr>
+</tbody></table>
+<h3 id='expected-returned'>Expected Returned</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Sample</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Success</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td>Error</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: us_helpers</code>
+<code>Version: 5.1.7</code></p>
 <h2 id='size'>size</h2>
 <!-- ```php
 ``` -->
