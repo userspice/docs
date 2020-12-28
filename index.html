@@ -2336,38 +2336,281 @@ If you are visiting <code>https://example.com/test/index.php</code> it would ret
 <p><code>Helper: permissions</code></p>
 
 <p><code>Parameters: $id</code></p>
-<h2 id='getip'>getIP</h2>
-<p><code>Helper: audit</code></p>
+<h2 id='getip'>getIP</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$ip</span> <span class="o">=</span> <span class="nx">getIP</span><span class="p">();</span>
+</code></pre></div>
+<p>Attempts to retrieve the users IP address. In the event a user is behind a proxy server, this will return the IP based on the following header values. These are retrieved using the <code>get_env</code> function and may not be returned if PHP is running as an ISAPI module.</p>
 
-<p><code>Parameters: None</code></p>
-<h2 id='fetchuserjsonpie'>fetchUserjsonPIE</h2>
-<p><code>Helper: audit</code></p>
+<ul>
+<li><code>HTTP_CLIENT_IP</code></li>
+<li><code>HTTP_X_FORWARDED_FOR</code></li>
+<li><code>HTTP_X_FORWARDED</code></li>
+<li><code>HTTP_FORWARDED_FOR</code></li>
+<li><code>HTTP_FORWARDED</code></li>
+<li><code>REMOTE_ADDR</code></li>
+</ul>
+<h3 id='expected-return'>Expected Return</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Sample</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>IP</td>
+<td><code>String</code></td>
+<td></td>
+</tr>
+</tbody></table>
 
-<p><code>Parameters: None</code></p>
-<h2 id='fetchuserjsonlg2'>fetchUserjsonLG2</h2>
 <p><code>Helper: audit</code></p>
+<h2 id='fetchuserjsonpie'>fetchUserjsonPIE</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$pie</span> <span class="o">=</span> <span class="nx">fetchUserjsonPIE</span><span class="p">();</span>
+</code></pre></div>
+<p>Returns data for a Pie Chart for Page Permission Counts.</p>
 
-<p><code>Parameters: None</code></p>
-<h2 id='fetchuserjsonlg'>fetchUserjsonLG</h2>
+<aside class="warning">
+    It is likely this function will be removed from core code in the future. You should implement your own version of this function in custom_functions.php or in your own plugin functions if required.
+</aside>
+<h3 id='expected-return-2'>Expected Return</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Sample</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Data</td>
+<td><code>Unknown</code></td>
+<td></td>
+</tr>
+</tbody></table>
+
 <p><code>Helper: audit</code></p>
+<h2 id='fetchuserjsonlg2'>fetchUserjsonLG2</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$loginsBar</span> <span class="o">=</span> <span class="nx">fetchUserjsonLG2</span><span class="p">();</span>
+</code></pre></div>
+<p>Returns data for a Bar Chart for Login Counts.</p>
 
-<p><code>Parameters: None</code></p>
-<h2 id='fetchalllatest'>fetchAllLatest</h2>
+<aside class="warning">
+    It is likely this function will be removed from core code in the future. You should implement your own version of this function in custom_functions.php or in your own plugin functions if required.
+</aside>
+<h3 id='expected-return-3'>Expected Return</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Sample</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Data</td>
+<td><code>Unknown</code></td>
+<td></td>
+</tr>
+</tbody></table>
+
 <p><code>Helper: audit</code></p>
+<h2 id='fetchuserjsonlg'>fetchUserjsonLG</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$signupCounts</span> <span class="o">=</span> <span class="nx">fetchUserjsonLG</span><span class="p">();</span>
+</code></pre></div>
+<p>Returns data for a Bar Chart for Signup Counts.</p>
 
-<p><code>Parameters: $userid,$start,$end,$eventcode</code></p>
-<h2 id='countstuff'>countStuff</h2>
+<aside class="warning">
+    It is likely this function will be removed from core code in the future. You should implement your own version of this function in custom_functions.php or in your own plugin functions if required.
+</aside>
+<h3 id='expected-return-4'>Expected Return</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Sample</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Data</td>
+<td><code>Unknown</code></td>
+<td></td>
+</tr>
+</tbody></table>
+
 <p><code>Helper: audit</code></p>
+<h2 id='fetchalllatest'>fetchAllLatest</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$auditData</span> <span class="o">=</span> <span class="nx">fetchAllLatest</span><span class="p">(</span><span class="nv">$userid</span><span class="p">,</span> <span class="nv">$start</span><span class="p">,</span> <span class="nv">$end</span><span class="p">,</span> <span class="nv">$eventcode</span><span class="p">);</span>
+</code></pre></div>
+<p>Retrieves data for Audit Functions</p>
 
-<p><code>Parameters: $what</code></p>
+<aside class="warning">
+    It is likely this function will be removed from core code in the future. You should implement your own version of this function in custom_functions.php or in your own plugin functions if required.
+</aside>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td><code>int</code></td>
+<td></td>
+<td>User ID for lookup</td>
+</tr>
+<tr>
+<td>start</td>
+<td><code>datetime</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>end</td>
+<td><code>datetime</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>eventcode</td>
+<td><code>string</code></td>
+<td></td>
+<td><code>audit.audit_eventcode</code></td>
+</tr>
+</tbody></table>
+<h3 id='expected-return-5'>Expected Return</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Sample</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Data</td>
+<td><code>Unknown</code></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: audit</code></p>
+<h2 id='countstuff'>countStuff</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$count</span> <span class="o">=</span> <span class="nx">countStuff</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
+</code></pre></div>
+<p>This function will count the number of rows for the query.</p>
+
+<aside class="warning">
+    It is likely this function will be removed from core code in the future. You should implement your own version of this function in custom_functions.php or in your own plugin functions if required.
+</aside>
+<h3 id='parameters-2'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>what</td>
+<td><code>string</code></td>
+<td></td>
+<td>Expected to send raw SQL parameters after <code>FROM</code></td>
+</tr>
+</tbody></table>
+<h3 id='expected-return-6'>Expected Return</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Sample</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Data</td>
+<td><code>Unknown</code></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: audit</code></p>
 <h2 id='countloginssince'>countLoginsSince</h2>
-<p><code>Helper: audit</code></p>
+<p>This function will use the <code>audit</code> table to count the number of events since a date based on an eventcode supplied. The audit system isn&#39;t heavily maintained, please do not consider this system reliable.</p>
 
-<p><code>Parameters: $eventcode,$since</code></p>
+<aside class="warning">
+    It is likely this function will be removed from core code in the future. You should implement your own version of this function in custom_functions.php or in your own plugin functions if required.
+</aside>
+<h3 id='parameters-3'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>eventcode</td>
+<td><code>string</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>since</td>
+<td><code>datetime</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='expected-return-7'>Expected Return</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Sample</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Count</td>
+<td><code>int</code></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: audit</code></p>
 <h2 id='ago'>ago</h2>
-<p><code>Helper: audit</code></p>
+<p>Return a string to how long ago the supplied timestamp occured. A better function to use is <a href="#time2str">time2str</a>.</p>
 
-<p><code>Parameters: $time</code></p>
+<aside class="warning">
+    You should use the time2str function instead, this function is likely to be removed from core code in the future.
+</aside>
+<h3 id='parameters-4'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>time</td>
+<td><code>datetime</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='expected-return-8'>Expected Return</h3>
+<table><thead>
+<tr>
+<th>Result</th>
+<th>Type</th>
+<th>Sample</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Timestamp</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><code>Helper: audit</code></p>
 <h2 id='fetchallaudit'>fetchAllAudit</h2>
 <p><code>Helper: audit</code></p>
 
