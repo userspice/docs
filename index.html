@@ -248,8 +248,11 @@
 .highlight .kd {
   color: #cb4b16;
 }
-.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
   color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
 }
 .highlight .sr {
   color: #2aa198;
@@ -281,7 +284,7 @@
     </style>
     <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all-e9bde216.js"></script>
+      <script src="javascripts/all-a9fde460.js"></script>
 
     <script>
       $(function() { setupCodeCopy(); });
@@ -296,7 +299,7 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo.png" class="logo" alt="" />
+      <img src="images/logo-1e815a84.png" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="php">php</a>
               <a href="#" data-language-name="sql">sql</a>
@@ -818,7 +821,7 @@
 <p>Thank you.</p>
 <h1 id='classes'>Classes</h1><h1 id='functions'>Functions</h1>
 <p>All functions included below can be overwritten in any of your custom files that are loaded before the helpers by using the function name. Although discouraged, if you require to overwrite our default behavior, you are permitted to do so.</p>
-<h2 id='useridexists'>userIdExists</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$userCheck</span> <span class="o">=</span> <span class="nx">userIdExists</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<h2 id='useridexists'>userIdExists</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$userCheck</span> <span class="o">=</span> <span class="nf">userIdExists</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 
 <span class="k">if</span><span class="p">(</span><span class="nv">$userCheck</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">echo</span> <span class="s2">"ID 1 exists"</span><span class="p">;</span>
@@ -867,10 +870,10 @@
 <h2 id='fetchallusers'>fetchAllUsers</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$orderBy</span> <span class="o">=</span> <span class="s1">'lname DESC, fname'</span><span class="p">;</span> <span class="c1">//orders by lname desc, fname</span>
 <span class="nv">$desc</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">//forces last orderBy param to be desc as well, if no order by is passed, this doesnt do anything</span>
 <span class="nv">$disabled</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">//removes users who are disabled, DB column permissions</span>
-<span class="nv">$users</span> <span class="o">=</span> <span class="nx">fetchAllUsers</span><span class="p">(</span><span class="nv">$orderBy</span><span class="p">,</span> <span class="nv">$desc</span><span class="p">,</span> <span class="nv">$disabled</span><span class="p">);</span>
+<span class="nv">$users</span> <span class="o">=</span> <span class="nf">fetchAllUsers</span><span class="p">(</span><span class="nv">$orderBy</span><span class="p">,</span> <span class="nv">$desc</span><span class="p">,</span> <span class="nv">$disabled</span><span class="p">);</span>
 
 <span class="k">foreach</span><span class="p">(</span><span class="nv">$users</span> <span class="k">as</span> <span class="nv">$u</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">dump</span><span class="p">(</span><span class="nv">$u</span><span class="p">);</span>
+  <span class="nf">dump</span><span class="p">(</span><span class="nv">$u</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Fetches an object of users based on the parameters included</p>
@@ -925,14 +928,14 @@
 <p><code>Helper: users</code></p>
 <h2 id='fetchuserdetails'>fetchUserDetails</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="c1">//Good Result:</span>
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nx">fetchUserDetails</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="kc">NULL</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span> <span class="c1">//Returns object</span>
+<span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nf">fetchUserDetails</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="kc">NULL</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span> <span class="c1">//Returns object</span>
 
 <span class="nv">$username</span> <span class="o">=</span> <span class="s1">'admin'</span><span class="p">;</span>
-<span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nx">fetchUserDetails</span><span class="p">(</span><span class="nv">$username</span><span class="p">);</span> <span class="c1">//Returns object</span>
+<span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nf">fetchUserDetails</span><span class="p">(</span><span class="nv">$username</span><span class="p">);</span> <span class="c1">//Returns object</span>
 
 <span class="c1">//Bad Result:</span>
 <span class="nv">$id</span> <span class="o">=</span> <span class="s1">'admin'</span><span class="p">;</span>
-<span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nx">fetchUserDetails</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="kc">NULL</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span> <span class="c1">//Returns null</span>
+<span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nf">fetchUserDetails</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="kc">NULL</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span> <span class="c1">//Returns null</span>
 </code></pre></div>
 <p>Fetches an object of a user based on the parameters included</p>
 <h3 id='parameters-3'>Parameters</h3>
@@ -990,11 +993,11 @@
 <p><code>Helper: users</code></p>
 <h2 id='deleteusers'>deleteUsers</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="c1">//Good Result:</span>
 <span class="nv">$users</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
-<span class="nv">$deleteUsers</span> <span class="o">=</span> <span class="nx">deleteUsers</span><span class="p">(</span><span class="nv">$users</span><span class="p">);</span> <span class="c1">// returns 3 - number of looped users - may not be the actual number deleted</span>
+<span class="nv">$deleteUsers</span> <span class="o">=</span> <span class="nf">deleteUsers</span><span class="p">(</span><span class="nv">$users</span><span class="p">);</span> <span class="c1">// returns 3 - number of looped users - may not be the actual number deleted</span>
 
 <span class="c1">//Bad Result:</span>
 <span class="nv">$users</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'username'</span><span class="p">];</span>
-<span class="nv">$deleteUsers</span> <span class="o">=</span> <span class="nx">deleteUsers</span><span class="p">(</span><span class="nv">$users</span><span class="p">);</span> <span class="c1">// returns 0 as "username" cannot be converted to an int</span>
+<span class="nv">$deleteUsers</span> <span class="o">=</span> <span class="nf">deleteUsers</span><span class="p">(</span><span class="nv">$users</span><span class="p">);</span> <span class="c1">// returns 0 as "username" cannot be converted to an int</span>
 </code></pre></div>
 <p>Delete user(s) by ID</p>
 <h3 id='parameters-4'>Parameters</h3>
@@ -1035,11 +1038,11 @@
 
 <p><code>Helper: users</code></p>
 <h2 id='echouser'>echouser</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="c1">//Good Result:</span>
-<span class="nx">echouser</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">//echos info from User ID 1 based on Setting in ACP</span>
-<span class="nx">echouser</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">//echos Username (FName) from User ID 1</span>
+<span class="nf">echouser</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">//echos info from User ID 1 based on Setting in ACP</span>
+<span class="nf">echouser</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">//echos Username (FName) from User ID 1</span>
 
 <span class="c1">//Bad Result:</span>
-<span class="nx">echouser</span><span class="p">(</span><span class="s1">'admin'</span><span class="p">);</span> <span class="c1">//echos "Unknown" as not a valid User ID</span>
+<span class="nf">echouser</span><span class="p">(</span><span class="s1">'admin'</span><span class="p">);</span> <span class="c1">//echos "Unknown" as not a valid User ID</span>
 </code></pre></div>
 <p>Echo a user directly in your code as defined in the Setting in your Admin Panel. An optional parameter can be passed to override the type.</p>
 <h3 id='parameters-5'>Parameters</h3>
@@ -1095,10 +1098,10 @@
 
 <p><code>Helper: users</code></p>
 <h2 id='echousername'>echousername</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="c1">//Good Result:</span>
-<span class="nv">$username</span> <span class="o">=</span> <span class="nx">echousername</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">//returns username from User ID 1</span>
+<span class="nv">$username</span> <span class="o">=</span> <span class="nf">echousername</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">//returns username from User ID 1</span>
 
 <span class="c1">//Bad Result:</span>
-<span class="nv">$username</span> <span class="o">=</span> <span class="nx">echousername</span><span class="p">(</span><span class="s1">'admin'</span><span class="p">);</span> <span class="c1">//returns "Unknown" as not a valid User ID</span>
+<span class="nv">$username</span> <span class="o">=</span> <span class="nf">echousername</span><span class="p">(</span><span class="s1">'admin'</span><span class="p">);</span> <span class="c1">//returns "Unknown" as not a valid User ID</span>
 </code></pre></div>
 <p>Returns the username of a user by ID</p>
 
@@ -1146,18 +1149,18 @@
 <span class="nv">$column</span> <span class="o">=</span> <span class="s1">'fname'</span><span class="p">;</span>
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="nv">$value</span> <span class="o">=</span> <span class="s1">'Doe'</span><span class="p">;</span>
-<span class="nv">$updateUser</span> <span class="o">=</span> <span class="nx">updateUser</span><span class="p">(</span><span class="nv">$column</span><span class="p">,</span> <span class="nv">$id</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span> <span class="c1">//returns DB result object</span>
+<span class="nv">$updateUser</span> <span class="o">=</span> <span class="nf">updateUser</span><span class="p">(</span><span class="nv">$column</span><span class="p">,</span> <span class="nv">$id</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span> <span class="c1">//returns DB result object</span>
 
 <span class="nv">$column</span> <span class="o">=</span> <span class="s1">'fname'</span><span class="p">;</span>
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="nv">$value</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="nv">$updateUser</span> <span class="o">=</span> <span class="nx">updateUser</span><span class="p">(</span><span class="nv">$column</span><span class="p">,</span> <span class="nv">$id</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span> <span class="c1">//returns DB result object</span>
+<span class="nv">$updateUser</span> <span class="o">=</span> <span class="nf">updateUser</span><span class="p">(</span><span class="nv">$column</span><span class="p">,</span> <span class="nv">$id</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span> <span class="c1">//returns DB result object</span>
 
 <span class="c1">//Bad Result:</span>
 <span class="nv">$column</span> <span class="o">=</span> <span class="s1">'fname'</span><span class="p">;</span>
 <span class="nv">$id</span> <span class="o">=</span> <span class="s1">'jdoe'</span><span class="p">;</span>
 <span class="nv">$value</span> <span class="o">=</span> <span class="s1">'Doe'</span><span class="p">;</span>
-<span class="nv">$updateUser</span> <span class="o">=</span> <span class="nx">updateUser</span><span class="p">(</span><span class="nv">$column</span><span class="p">,</span> <span class="nv">$id</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span> <span class="c1">//returns null, failed as id is not int</span>
+<span class="nv">$updateUser</span> <span class="o">=</span> <span class="nf">updateUser</span><span class="p">(</span><span class="nv">$column</span><span class="p">,</span> <span class="nv">$id</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span> <span class="c1">//returns null, failed as id is not int</span>
 </code></pre></div>
 <p>Update an attribute of a specific user by ID</p>
 <h3 id='parameters-7'>Parameters</h3>
@@ -1211,17 +1214,17 @@
 <p><code>Helper: users</code></p>
 <h2 id='fetchusername'>fetchUserName</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="c1">//Good Result:</span>
 <span class="nv">$id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nx">fetchUserName</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="kc">NULL</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span> <span class="c1">//Returns string of fname and lname</span>
+<span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nf">fetchUserName</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="kc">NULL</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span> <span class="c1">//Returns string of fname and lname</span>
 
 <span class="nv">$username</span> <span class="o">=</span> <span class="s1">'admin'</span><span class="p">;</span>
-<span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nx">fetchUserName</span><span class="p">(</span><span class="nv">$username</span><span class="p">);</span> <span class="c1">//Returns string of fname and lname</span>
+<span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nf">fetchUserName</span><span class="p">(</span><span class="nv">$username</span><span class="p">);</span> <span class="c1">//Returns string of fname and lname</span>
 
 <span class="c1">//Bad Result:</span>
 <span class="nv">$id</span> <span class="o">=</span> <span class="s1">'admin'</span><span class="p">;</span>
-<span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nx">fetchUserName</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="kc">NULL</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span> <span class="c1">//Returns null</span>
+<span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nf">fetchUserName</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="kc">NULL</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span> <span class="c1">//Returns null</span>
 
 <span class="nv">$username</span> <span class="o">=</span> <span class="s1">'abc123'</span><span class="p">;</span> <span class="c1">//bad username (this user shouldnt exist)</span>
-<span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nx">fetchUserName</span><span class="p">(</span><span class="nv">$username</span><span class="p">);</span> <span class="c1">//Returns "Unknown"</span>
+<span class="nv">$fetchedUser</span> <span class="o">=</span> <span class="nf">fetchUserName</span><span class="p">(</span><span class="nv">$username</span><span class="p">);</span> <span class="c1">//Returns "Unknown"</span>
 </code></pre></div>
 <p>Fetches a concatenation of the FName and LName from the Users Table for the specified user.</p>
 <h3 id='parameters-8'>Parameters</h3>
@@ -1282,7 +1285,7 @@
 </tbody></table>
 
 <p><code>Helper: users</code></p>
-<h2 id='isadmin'>isAdmin</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$isAdmin</span> <span class="o">=</span> <span class="nx">isAdmin</span><span class="p">();</span>
+<h2 id='isadmin'>isAdmin</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$isAdmin</span> <span class="o">=</span> <span class="nf">isAdmin</span><span class="p">();</span>
 
 <span class="k">if</span><span class="p">(</span><span class="nv">$isAdmin</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">echo</span> <span class="s1">'Is Admin'</span><span class="p">;</span>
@@ -1320,10 +1323,10 @@
 
 <p><code>Helper: users</code></p>
 <h2 id='name_from_id'>name_from_id</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="c1">//Good Result:</span>
-<span class="nv">$username</span> <span class="o">=</span> <span class="nx">name_from_id</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">//returns username from User ID 1</span>
+<span class="nv">$username</span> <span class="o">=</span> <span class="nf">name_from_id</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">//returns username from User ID 1</span>
 
 <span class="c1">//Bad Result:</span>
-<span class="nv">$username</span> <span class="o">=</span> <span class="nx">name_from_id</span><span class="p">(</span><span class="s1">'admin'</span><span class="p">);</span> <span class="c1">//returns "-" as not a valid User ID</span>
+<span class="nv">$username</span> <span class="o">=</span> <span class="nf">name_from_id</span><span class="p">(</span><span class="s1">'admin'</span><span class="p">);</span> <span class="c1">//returns "-" as not a valid User ID</span>
 </code></pre></div>
 <p>Returns the username of a user by ID with the first character capitalized</p>
 <h3 id='parameters-9'>Parameters</h3>
@@ -2336,7 +2339,7 @@ If you are visiting <code>https://example.com/test/index.php</code> it would ret
 <p><code>Helper: permissions</code></p>
 
 <p><code>Parameters: $id</code></p>
-<h2 id='getip'>getIP</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$ip</span> <span class="o">=</span> <span class="nx">getIP</span><span class="p">();</span>
+<h2 id='getip'>getIP</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$ip</span> <span class="o">=</span> <span class="nf">getIP</span><span class="p">();</span>
 </code></pre></div>
 <p>Attempts to retrieve the users IP address. In the event a user is behind a proxy server, this will return the IP based on the following header values. These are retrieved using the <code>get_env</code> function and may not be returned if PHP is running as an ISAPI module.</p>
 
@@ -2364,7 +2367,7 @@ If you are visiting <code>https://example.com/test/index.php</code> it would ret
 </tbody></table>
 
 <p><code>Helper: audit</code></p>
-<h2 id='fetchuserjsonpie'>fetchUserjsonPIE</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$pie</span> <span class="o">=</span> <span class="nx">fetchUserjsonPIE</span><span class="p">();</span>
+<h2 id='fetchuserjsonpie'>fetchUserjsonPIE</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$pie</span> <span class="o">=</span> <span class="nf">fetchUserjsonPIE</span><span class="p">();</span>
 </code></pre></div>
 <p>Returns data for a Pie Chart for Page Permission Counts.</p>
 
@@ -2387,7 +2390,7 @@ If you are visiting <code>https://example.com/test/index.php</code> it would ret
 </tbody></table>
 
 <p><code>Helper: audit</code></p>
-<h2 id='fetchuserjsonlg2'>fetchUserjsonLG2</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$loginsBar</span> <span class="o">=</span> <span class="nx">fetchUserjsonLG2</span><span class="p">();</span>
+<h2 id='fetchuserjsonlg2'>fetchUserjsonLG2</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$loginsBar</span> <span class="o">=</span> <span class="nf">fetchUserjsonLG2</span><span class="p">();</span>
 </code></pre></div>
 <p>Returns data for a Bar Chart for Login Counts.</p>
 
@@ -2410,7 +2413,7 @@ If you are visiting <code>https://example.com/test/index.php</code> it would ret
 </tbody></table>
 
 <p><code>Helper: audit</code></p>
-<h2 id='fetchuserjsonlg'>fetchUserjsonLG</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$signupCounts</span> <span class="o">=</span> <span class="nx">fetchUserjsonLG</span><span class="p">();</span>
+<h2 id='fetchuserjsonlg'>fetchUserjsonLG</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$signupCounts</span> <span class="o">=</span> <span class="nf">fetchUserjsonLG</span><span class="p">();</span>
 </code></pre></div>
 <p>Returns data for a Bar Chart for Signup Counts.</p>
 
@@ -2433,7 +2436,7 @@ If you are visiting <code>https://example.com/test/index.php</code> it would ret
 </tbody></table>
 
 <p><code>Helper: audit</code></p>
-<h2 id='fetchalllatest'>fetchAllLatest</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$auditData</span> <span class="o">=</span> <span class="nx">fetchAllLatest</span><span class="p">(</span><span class="nv">$userid</span><span class="p">,</span> <span class="nv">$start</span><span class="p">,</span> <span class="nv">$end</span><span class="p">,</span> <span class="nv">$eventcode</span><span class="p">);</span>
+<h2 id='fetchalllatest'>fetchAllLatest</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$auditData</span> <span class="o">=</span> <span class="nf">fetchAllLatest</span><span class="p">(</span><span class="nv">$userid</span><span class="p">,</span> <span class="nv">$start</span><span class="p">,</span> <span class="nv">$end</span><span class="p">,</span> <span class="nv">$eventcode</span><span class="p">);</span>
 </code></pre></div>
 <p>Retrieves data for Audit Functions</p>
 
@@ -2490,7 +2493,7 @@ If you are visiting <code>https://example.com/test/index.php</code> it would ret
 </tbody></table>
 
 <p><code>Helper: audit</code></p>
-<h2 id='countstuff'>countStuff</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$count</span> <span class="o">=</span> <span class="nx">countStuff</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
+<h2 id='countstuff'>countStuff</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="nv">$count</span> <span class="o">=</span> <span class="nf">countStuff</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
 </code></pre></div>
 <p>This function will count the number of rows for the query.</p>
 
